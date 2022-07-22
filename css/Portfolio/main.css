@@ -92,3 +92,17 @@ body{
     background-size: 100% 100%;
     z-index: 9;
 }
+.portfolio-text{
+    margin-top: 8%;
+}
+.portfolio-title{
+    font-family: "Ancient";
+    font-size: 3rem;
+    color: #702f13;
+    text-shadow: 1px 1px 0px #b86f50;
+}
+.portfolio-subtitle{
+    font-family: "Pixeboy";
+    font-size: 1.2rem;
+    color: #702f13;
+}
