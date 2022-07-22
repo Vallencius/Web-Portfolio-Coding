@@ -1,0 +1,94 @@
+body{
+    overflow: hidden;
+    margin: 0 !important;
+}
+.dark{
+    filter: brightness(50%);
+}
+.blur{
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+.main-display{
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #000;
+}
+.image-map{
+    position:relative;
+    height: 100vmin;
+    width: 177.778vmin;
+    margin: 0 auto;
+}
+.map{
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100vmin;
+}
+.sprite-box{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    z-index: 1;
+    width: 5%;
+}
+.sprite{
+    position: absolute;
+    bottom: 25vh;
+    left: 190px;
+    z-index: 1;
+    width: 100%;
+}
+.sprite-down{
+    opacity:0;
+}
+.sprite-left{
+    opacity:0;
+}
+.sprite-right{
+    opacity:0;
+}
+.door-msg{
+    display: none;
+    height: 40vh;
+    width: 30vw;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-image: url(../../images/gallery.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.door-text{
+    width: 100%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.door-title{
+    font-family: "Pixeboy";
+    font-size: 3rem;
+    color: #702f13;
+}
+.door-subtitle{
+    font-family: "Pixeboy";
+    font-size: 1.2rem;
+}
+.portfolio-msg{
+    display: none;
+    height: 80vh;
+    width: 60vw;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-image: url(../../images/gallery.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 9;
+}

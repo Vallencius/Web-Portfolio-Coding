@@ -1,0 +1,111 @@
+body{
+    overflow: hidden;
+    margin: 0 !important;
+}
+.dark{
+    filter: brightness(50%);
+}
+.blur{
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+.home-display{
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+    background-image: url("../../images/grass.gif");
+    /* background-size: 24px 12px; */
+}
+.image-map{
+    position:relative;
+    height: 100vmin;
+    width: 177.778vmin;
+    margin: 0 auto;
+}
+.map{
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100vmin;
+}
+.sprite-box{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    z-index: 1;
+}
+.sprite{
+    position: absolute;
+    bottom: 70vh;
+    left: 10px;
+    z-index: 1;
+    width: 30px;
+}
+.sprite-up{
+    opacity:0;
+}
+.sprite-left{
+    opacity:0;
+}
+.sprite-right{
+    opacity:0;
+}
+.arrow-menu{
+    position: absolute;
+    bottom: 2%;
+    left: 48%;
+    width: 5%;
+    height: 10%;
+    transform: translate(-50%, 50%);
+    -webkit-transform: rotate(270deg); 
+    transform:rotate(270deg); 
+}
+.help{
+    cursor: pointer;
+    width: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.sound{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 5%;
+}
+.mute{
+    display: none;
+    width: 50px;
+}
+.music-on{
+    width: 50px;
+}
+
+.arrow-key{
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20%;
+    width: 20%;
+}
+.arr-button{
+    width: 50px;
+}
+.arrow-up{
+    display: none;
+    position: absolute;
+    bottom: 9%;
+    left: 0;
+    height: 20%;
+    width: 20%;
+}
+@media screen and (max-width: 768px) {
+    .arrow-up{
+        display: block;
+    }
+    .arrow-key{
+        display: block;
+    }
+}

@@ -1,0 +1,81 @@
+.hitbox-atas{
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    height: 5%;
+    background-color: rgba(255,100,100,0);
+}
+.hitbox-kiri{
+    position: absolute;
+    bottom: 17%;
+    left: 25%;
+    width: 75%;
+    height: 5%;
+    background-color: rgba(255,100,100,0);
+}
+.hitbox-kanan{
+    position: absolute;
+    bottom: 17%;
+    left: 0%;
+    width: 14%;
+    height: 5%;
+    background-color: rgba(255,100,100,0);
+}
+.hitbox-fire{
+    position: absolute;
+    bottom: 72%;
+    left: 44%;
+    width: 12%;
+    height: 3%;
+    background-color: rgba(255,100,100,0);
+}
+.hitbox-door{
+    position: absolute;
+    bottom: 15%;
+    left: 14%;
+    width: 10%;
+    height: 8%;
+    background-color: rgba(255,100,100,0);
+}
+.hitbox-bawah{
+    position: absolute;
+    bottom: 13%;
+    left: 14%;
+    width: 10%;
+    height: 2%;
+    background-color: rgba(255,100,100,0);
+}
+
+.hitbox-portfolio-1{
+    position: absolute;
+    top: 26%;
+    left: 10.5%;
+    width: 7%;
+    height: 6%;
+    background-color: rgba(255,100,100,0);
+}
+.hitbox-portfolio-2{
+    position: absolute;
+    top: 26%;
+    left: 28%;
+    width: 7%;
+    height: 6%;
+    background-color: rgba(255,100,100,0);
+}
+.hitbox-portfolio-3{
+    position: absolute;
+    top: 26%;
+    left: 66%;
+    width: 7%;
+    height: 6%;
+    background-color: rgba(255,100,100,0);
+}
+.hitbox-portfolio-4{
+    position: absolute;
+    top: 26%;
+    left: 83.4%;
+    width: 7%;
+    height: 6%;
+    background-color: rgba(255,100,100,0);
+}

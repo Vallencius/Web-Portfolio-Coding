@@ -1,0 +1,31 @@
+.portrait-mode{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #2961b5;
+    z-index:9;
+}
+.rotate-device{
+    position: absolute;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-direction: alternate;
+}
+.rotate-sub{
+    position: absolute;
+    
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    
+    font-family: 'Pixeboy';
+    font-size: 1.2rem;
+    color: white;
+    text-shadow: 1px 1px 0px #000050;
+    text-align:center;
+}

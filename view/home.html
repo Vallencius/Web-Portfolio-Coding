@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vallencius Gavriel's Portfolio World</title>
+    <link href="../css/font.css" rel="stylesheet">
+    <link href="../css/Home/home.css" rel="stylesheet">
+    <link href="../css/Home/hitBoxes.css" rel="stylesheet">
+    <link href="../css/Home/modalMenu.css" rel="stylesheet">
+    <link href="../css/portrait.css" rel="stylesheet">
+</head>
+<body>
+    <div class="home-display dark">
+        <div class="image-map">
+            <div class="sprite-box">
+                <img src="../images/sprite-up.gif" class="sprite me sprite-up">
+                <img src="../images/sprite-down.gif" class="sprite me sprite-down">
+                <img src="../images/sprite-left.gif" class="sprite me sprite-left">
+                <img src="../images/sprite-right.gif" class="sprite me sprite-right">
+            </div>
+            <img src="../images/Map-Fix-NPC.gif" class="map">
+
+            <!-- Hitbox -->
+            <div class="hitbox-blue"></div>
+            <div class="hitbox-green"></div>
+            <div class="hitbox-red"></div>
+            <div class="hitbox-orange"></div>
+            <div class="hitbox-purple"></div>
+            <div class="hitbox-house"></div>
+            <div class="hitbox-pantai-kiri"></div>
+            <div class="hitbox-pantai-kanan"></div>
+            <div class="hitbox-pantai-menu"></div>
+
+            <!-- Modal Menu on Map -->
+            <div class="blue-msg modal-msg">
+                <p class="modal">ACHIEVEMENTS</p>
+                <p class="sub-modal">~ Press Space Bar to See ~</p>
+            </div>
+            <div class="green-msg modal-msg">
+                <p class="modal">MY INFO</p>
+                <p class="sub-modal">~ Press Space Bar to See ~</p>
+            </div>
+            <div class="red-msg modal-msg">
+                <p class="modal">EXPERIENCES</p>
+                <p class="sub-modal">~ Press Space Bar to See ~</p>
+            </div>
+            <div class="orange-msg modal-msg">
+                <p class="modal">SKILLS</p>
+                <p class="sub-modal">~ Press Space Bar to See ~</p>
+            </div>
+            <div class="purple-msg modal-msg">
+                <p class="modal">EDUCATION</p>
+                <p class="sub-modal">~ Press Space Bar to See ~</p>
+            </div>
+            <div class="house-msg modal-msg">
+                <p class="modal">PORTFOLIO</p>
+                <p class="sub-modal">~ Press Space Bar to See ~</p>
+            </div>
+            <div class="menu-msg modal-msg">
+                <p class="modal">MAIN MENU</p>
+                <p class="sub-modal">~ Press Space Bar to Go Back ~</p>
+            </div>
+
+            
+            <img src="../images/arrow.gif" class="arrow-menu">
+
+            <!-- Panel Subtitle -->
+            <!-- <div class="blue-panel"></div> -->
+
+            <!-- GUI -->
+            <img src="../images/help.png" class="help">
+            <div class="sound">
+                <img src="../images/mute.png" class="mute">
+                <img src="../images/music-on.png" class="music-on">
+            </div>
+
+            <!-- Mobile button -->
+            <div class="arrow-up">
+                <img src="../images/up-button.png" class="up-button arr-button">
+            </div>
+            <div class="arrow-key">
+                <img src="../images/left-button.png" class="left-button arr-button">
+                <img src="../images/down-button.png" class="down-button arr-button">
+                <img src="../images/right-button.png" class="right-button arr-button">
+            </div>
+        </div>
+        
+        <!-- Portrait Mode -->
+        <div class="portrait-mode">
+            <img src="../images/rotatedevice.gif" class="rotate-device">
+            <p class="rotate-sub">Please Rotate Your Phone Into Landscape Mode</p>
+        </div>
+
+    </div>
+
+    <!-- Modal Awal -->
+    <div class="modal-awal">
+        <p class="title-awal">Welcome to My World!</p>
+        <p class="subtitle-awal">Walk using arrow key. Press space bar or action button (mobile) to interact with NPC or other surrounding. Come to my house to see my portfolios</p>
+        <p class="continue-awal">~ Press any key to continue ~</p>
+        <!-- Isinya dirubah nanti tampilin isi rumah sama lainnya -->
+        <!-- <img src="../images/tutorial.png" class="tutorial"> -->
+    </div>
+    
+    <!-- Modal Details -->
+    <div class="modal-detail">
+        <img src="../images/close.png" class="btn-close">
+        <div class="modal-detail-achievement modal-detail-title">
+            <p class="modal-title">Achievements</p>
+        </div>
+        <div class="modal-detail-myinfo modal-detail-title">
+            <p class="modal-title">My Information</p>
+            <img src="../images/fotoVallen.jpg" class="pas-foto">
+            <div class="modal-subtitle">
+                <table>
+                    <tr>
+                        <td>Full Name</td><td>:</td><td>Vallencius Gavriel Alfredo Siswanto</td>
+                    </tr>
+                    <tr>
+                        <td>Alamat</td><td>:</td><td>Perumahan Mawar Asri A-7, Butuh, Salatiga, Jawa Tengah</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="modal-detail-experience modal-detail-title">
+            <p class="modal-title">Experiences</p>
+        </div>
+        <div class="modal-detail-education modal-detail-title">
+            <p class="modal-title">Education</p>
+        </div>
+        <div class="modal-detail-skills modal-detail-title">
+            <p class="modal-title">Skills</p>
+        </div>
+    </div>
+
+    <!-- <embed src="../audio/main.mp3" width="180" height="90" loop="false" autostart="false" hidden="true" /> -->
+    <!-- <embed src="../audio/main.mp3" loop="true" autostart="true" width="2"
+         height="0"> -->
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../js/firstModal.js"></script>
+<script src="../js/button.js"></script>
+<script src="../js/character.js"></script>
+<script src="../js/collisionAlert.js"></script>
+<script src="../js/portrait.js"></script>
+<script src="../js/audio.js"></script>
+</html>

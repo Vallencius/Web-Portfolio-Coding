@@ -1,0 +1,181 @@
+.modal-msg{
+    display: none;
+    position: relative;
+    width: 150px;
+    height: 100px;
+    background-image: url(../../images/panel3.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index:2;
+}
+.modal{
+    position:absolute;
+    color: white;
+    font-size: 85%;
+    left: 0; 
+    right: 0; 
+    top: 35%; 
+    bottom: 0; 
+    margin: auto; 
+}
+.sub-modal{
+    position:absolute;
+    color: white;
+    font-size: 60%;
+    left: 0; 
+    right: 0; 
+    top: 55%; 
+    bottom: 0; 
+    margin: auto; 
+}
+
+.blue-msg{
+    top: 35%;
+    left: 5.5%;
+}
+.green-msg{
+    top: 10%;
+    left: 27%;
+}
+.red-msg{
+    top: 35%;
+    left: 43%;
+}
+.orange-msg{
+    top: 49.5%;
+    left: 66.5%;
+}
+.purple-msg{
+    top: 3%;
+    left: 70%;
+}
+.house-msg{
+    top: 0%;
+    left: 35%;
+}
+.menu-msg{
+    top: 75%;
+    left: 42.5%;
+    width: 175px;
+    height: 75px;
+}
+
+.modal-detail{
+    display:none;
+    position: relative;
+    top:0;
+    left:50%;
+    transform: translate(-50%,-100%);
+    width: 60vw;
+    height: 100vh;
+    background-image: url(../../images/Modal.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 3;
+    animation: fadein .5s;
+}
+
+.modal-detail-title{
+    display: none;
+    position: absolute;
+    top: 0%;
+    left:50%;
+    transform: translate(-50%,0%);
+}
+
+.modal-title{
+    font-family: 'Ancient';
+    font-size: 4rem;
+    color: #000050;
+    text-shadow: 2px 2px 0px white;
+    text-align: center;
+}
+
+@keyframes fadein {
+	from {
+		opacity:0;
+	}
+	to {
+		opacity:1;
+	}
+}
+@keyframes fadeout {
+	from {
+		opacity:1;
+	}
+	to {
+		opacity:0;
+	}
+}
+.btn-close{
+    position: absolute;
+    cursor: pointer;
+    top: 5%;
+    right: 5%;
+    width: 30px;
+}
+
+.modal-awal{
+    height: 80vh;
+    width: 60vw;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-image: url(../../images/gallery.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    animation: fadein .5s;
+}
+
+.title-awal{
+    font-family: 'Ancient';
+    font-size: 4rem;
+    color: #000050;
+    text-shadow: 2px 2px 0px white;
+    text-align: center;
+}
+
+.subtitle-awal{
+    width: 80%;
+    position: absolute;
+    top:40%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Pixeboy';
+    font-size: 1.5rem;
+    color: #000050;
+    text-align: center;
+}
+
+.continue-awal{
+    position: absolute;
+    bottom: 10%;
+    left:50%;
+    font-family: 'Pixeboy';
+    font-size: 1.5rem;
+    color: #000050;
+    transform: translate(-50%, 0%);
+}
+
+/* .tutorial{
+    position: absolute;
+    bottom: 20%;
+    left:50%;
+    transform: translate(-50%, 0%);
+} */
+
+.pas-foto{
+    position: absolute;
+    left: 0;
+    top: 175%;
+    transform: translate(-75%, -50%);
+    width: 75%;
+}
+.modal-subtitle{
+    position: absolute;
+    right: -50%;
+    top: 175%;
+    transform: translate(0%, -50%);
+    width: 100%;
+}
