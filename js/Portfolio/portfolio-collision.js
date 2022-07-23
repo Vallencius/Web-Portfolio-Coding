@@ -1,4 +1,9 @@
 $(document).ready(function () {
+        
+    var isOpen1 = 0;
+    var isOpen2 = 0;
+    var isOpen3 = 0;
+    var isOpen4 = 0;
     $(document).on('keyup',function (e){   
         // Hitboxes
         var meBot = (($(".me").position().top) + $(".me").height()+ $(".image-map").height());
@@ -25,7 +30,7 @@ $(document).ready(function () {
         var hitPort4Bot = ($(".hitbox-portfolio-4").position().top + $(".hitbox-portfolio-4").height());
         var hitPort4Left = $(".hitbox-portfolio-4").position().left;
         var hitPort4Right = $(".hitbox-portfolio-4").position().left + $(".hitbox-portfolio-4").width();
-        
+
         //collision check with Door hitbox
         if(!((( meTop-20 > hitDoorBot) || ( meBot < hitDoorTop)) || ((meLeft-20 > hitDoorRight) || (meRight+20 < hitDoorLeft)))){
             $(".door-msg").css("display", "block");
@@ -39,35 +44,73 @@ $(document).ready(function () {
 
         //collision check with Port1 hitbox
         if(!((( meTop+20 > hitPort1Bot) || ( meBot+20 < hitPort1Top)) || ((meLeft+20 > hitPort1Right) || (meRight-20 < hitPort1Left)))){
-            $(".portfolio-msg-1").css("display", "block");
-            $(".image-map").addClass("dark");
+            if(!isOpen1){
+                $(".portfolio-msg-1").css("display", "block");
+                $(".image-map").addClass("dark");
+                isOpen1 = 1;
+            }
         }else{
-            $(".portfolio-msg-1").css("display", "none");
+            isOpen1 = 0;
         }
 
         //collision check with Port2 hitbox
         if(!((( meTop+20 > hitPort2Bot) || ( meBot+20 < hitPort2Top)) || ((meLeft+20 > hitPort2Right) || (meRight-20 < hitPort2Left)))){
-            $(".portfolio-msg-2").css("display", "block");
-            $(".image-map").addClass("dark");
+            if(!isOpen2){
+                $(".portfolio-msg-2").css("display", "block");
+                $(".image-map").addClass("dark");
+                isOpen2 = 1;
+            }
         }else{
-            $(".portfolio-msg-2").css("display", "none");
+            isOpen2 = 0;
         }
 
         //collision check with Port3 hitbox
         if(!((( meTop+20 > hitPort3Bot) || ( meBot+20 < hitPort3Top)) || ((meLeft+20 > hitPort3Right) || (meRight-20 < hitPort3Left)))){
-            $(".portfolio-msg-3").css("display", "block");
-            $(".image-map").addClass("dark");
+            if(!isOpen3){
+                $(".portfolio-msg-3").css("display", "block");
+                $(".image-map").addClass("dark");
+                isOpen3 = 1;
+            }
         }else{
-            $(".portfolio-msg-3").css("display", "none");
+            isOpen3 = 0;
         }
 
         //collision check with Port4 hitbox
         if(!((( meTop+20 > hitPort4Bot) || ( meBot+20 < hitPort4Top)) || ((meLeft+20 > hitPort4Right) || (meRight-20 < hitPort4Left)))){
-            $(".portfolio-msg-4").css("display", "block");
-            $(".image-map").addClass("dark");
+            if(!isOpen4){
+                $(".portfolio-msg-4").css("display", "block");
+                $(".image-map").addClass("dark");
+                isOpen4 = 1;
+            }
         }else{
-            $(".portfolio-msg-4").css("display", "none");
+            isOpen4 = 0;
         }
+
+        $("#btn-close-1").on("click", function(){
+            if(isOpen1){
+                $(".portfolio-msg-1").css("display", "none");
+                $(".image-map").removeClass("dark");
+            }
+        });
+        $("#btn-close-2").on("click", function(){
+            if(isOpen2){
+                $(".portfolio-msg-1").css("display", "none");
+                $(".image-map").removeClass("dark");
+            }
+        });
+        $("#btn-close-3").on("click", function(){
+            if(isOpen3){
+                $(".portfolio-msg-1").css("display", "none");
+                $(".image-map").removeClass("dark");
+            }
+        });
+        $("#btn-close-4").on("click", function(){
+            if(isOpen4){
+                $(".portfolio-msg-1").css("display", "none");
+                $(".image-map").removeClass("dark");
+            }
+        });
+
     });
     $(document).on('keydown',function (e){
     //collision check with blue hitbox

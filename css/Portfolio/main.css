@@ -106,3 +106,10 @@ body{
     font-size: 1.2rem;
     color: #702f13;
 }
+.btn-close{
+    position: absolute;
+    cursor: pointer;
+    top: 12%;
+    right: 7%;
+    width: 3%;
+}
