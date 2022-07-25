@@ -34,13 +34,14 @@ body{
     bottom: 0;
     left:0;
     z-index: 1;
+    width: 3%;
 }
 .sprite{
     position: absolute;
     bottom: 70vh;
     left: 10px;
     z-index: 1;
-    width: 30px;
+    width: 100%;
 }
 .sprite-up{
     opacity:0;
@@ -63,7 +64,7 @@ body{
 }
 .help{
     cursor: pointer;
-    width: 50px;
+    width: 7%;
     position: absolute;
     top: 0;
     right: 0;
@@ -72,14 +73,15 @@ body{
     cursor: pointer;
     position: absolute;
     top: 0;
-    right: 5%;
+    right: 8%;
+    width: 7%;
 }
 .mute{
     display: none;
-    width: 50px;
+    width: 100%;
 }
 .music-on{
-    width: 50px;
+    width: 100%;
 }
 
 .arrow-key{
@@ -91,7 +93,7 @@ body{
     width: 20%;
 }
 .arr-button{
-    width: 50px;
+    width: 20%;
 }
 .arrow-up{
     display: none;
