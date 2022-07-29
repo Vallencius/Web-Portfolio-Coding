@@ -142,4 +142,17 @@ $(document).ready(function () {
             $(".modal-detail-skills").css("display", "none");
         },500); 
     });
+    window.setInterval(function(){
+        if($(window).width()<769){
+            x = document.getElementsByClassName("sub-modal");
+            for(var i = 0; i < x.length; i++){
+                x[i].innerHTML = "~ Press Action Button ~";    // Change the content
+            }
+        }else{
+            x = document.getElementsByClassName("sub-modal");
+            for(var i = 0; i < x.length; i++){
+                x[i].innerHTML = "~ Press Space Bar to See ~";    // Change the content
+            }
+        }
+    }, 500);
 });

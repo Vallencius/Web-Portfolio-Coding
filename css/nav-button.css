@@ -1,0 +1,52 @@
+.arrow-key{
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20%;
+    width: 20%;
+}
+.arr-button{
+    width: 20%;
+}
+.btn-action{
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20%;
+    height: 20%;
+}
+.act-button{
+    width: 20%;
+}
+.arrow-up{
+    display: none;
+    position: absolute;
+    bottom: 9%;
+    left: 0;
+    height: 20%;
+    width: 20%;
+}
+@media screen and (max-width: 768px) {
+    .arrow-up{
+        display: block;
+    }
+    .arrow-key{
+        display: block;
+    }
+    .btn-action{
+        display: block;
+    }
+}
+@media screen and (max-height: 450px) and (min-width: 840px){
+    .arrow-up{
+        display: block;
+    }
+    .arrow-key{
+        display: block;
+    }
+    .btn-action{
+        display: block;
+    }
+}

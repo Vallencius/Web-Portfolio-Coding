@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var mousedownID=-1;
+    var touchstartID=-1;
 
     $(".help").on("click", function(){
         $(".modal-awal").css("animation", "fadein .5s");
@@ -17,7 +17,7 @@ $(document).ready(function(){
         // mute
     })
 
-    $(document).on('mousedown',function (){   
+    $(document).on('touchstart',function (){   
         if (!$('.me').is(':animated'))  {   
             // Hitboxes
             var meBot = (($(".me").position().top) + $(".me").height()+ $(".image-map").height());
@@ -62,10 +62,10 @@ $(document).ready(function(){
             var hitMenuLeft = $(".hitbox-pantai-menu").position().left;
             var hitMenuRight = $(".hitbox-pantai-menu").position().left + $(".hitbox-pantai-menu").width();
 
-            $(".left-button").on("mousedown", function(){ //left arrow key
-                if(mousedownID==-1)
-                    mousedownID = setInterval(whilemousedown, 100 /*execute every 100ms*/);
-                function whilemousedown() {
+            $(".left-button").on("touchstart", function(){ //left arrow key
+                if(touchstartID==-1)
+                    touchstartID = setInterval(whiletouchstart, 100 /*execute every 100ms*/);
+                function whiletouchstart() {
                     meBot = (($(".me").position().top) + $(".me").height()+ $(".image-map").height());
                     meTop = ($(".me").position().top + $(".image-map").height());
                     meLeft = ($(".me").position().left);
@@ -127,10 +127,10 @@ $(document).ready(function(){
                     }
                 }
             });
-            $(".up-button").on("mousedown", function(){ //up arrow key
-                if(mousedownID==-1)
-                    mousedownID = setInterval(whilemousedown, 100 /*execute every 100ms*/);
-                function whilemousedown() {
+            $(".up-button").on("touchstart", function(){ //up arrow key
+                if(touchstartID==-1)
+                    touchstartID = setInterval(whiletouchstart, 100 /*execute every 100ms*/);
+                function whiletouchstart() {
                     meBot = (($(".me").position().top) + $(".me").height()+ $(".image-map").height());
                     meTop = ($(".me").position().top + $(".image-map").height());
                     meLeft = ($(".me").position().left);
@@ -193,11 +193,11 @@ $(document).ready(function(){
                     }
                 }
             });
-            $(".right-button").on("mousedown", function(){//right arrow key
-                if(mousedownID==-1)
-                    mousedownID = setInterval(whilemousedown, 100 /*execute every 100ms*/);
+            $(".right-button").on("touchstart", function(){//right arrow key
+                if(touchstartID==-1)
+                    touchstartID = setInterval(whiletouchstart, 100 /*execute every 100ms*/);
                 
-                function whilemousedown() {
+                function whiletouchstart() {
                     meBot = (($(".me").position().top) + $(".me").height()+ $(".image-map").height());
                     meTop = ($(".me").position().top + $(".image-map").height());
                     meLeft = ($(".me").position().left);
@@ -260,11 +260,11 @@ $(document).ready(function(){
                     }
                 }
             });
-            $(".down-button").on("mousedown", function(){ //bottom arrow key
-                if(mousedownID==-1)
-                    mousedownID = setInterval(whilemousedown, 100 /*execute every 100ms*/);
+            $(".down-button").on("touchstart", function(){ //bottom arrow key
+                if(touchstartID==-1)
+                    touchstartID = setInterval(whiletouchstart, 100 /*execute every 100ms*/);
                 
-                function whilemousedown() {
+                function whiletouchstart() {
                     meBot = (($(".me").position().top) + $(".me").height()+ $(".image-map").height());
                     meTop = ($(".me").position().top + $(".image-map").height());
                     meLeft = ($(".me").position().left);
@@ -330,7 +330,7 @@ $(document).ready(function(){
         }        
     })
 
-    $(document).on("mouseup", function(){
+    $(document).on("touchend", function(){
         meBot = (($(".me").position().top) + $(".me").height()+ $(".image-map").height());
         meTop = ($(".me").position().top + $(".image-map").height());
         meLeft = ($(".me").position().left);
@@ -376,11 +376,14 @@ $(document).ready(function(){
         //collision check with blue hitbox
         if(!((( meTop-20 > hitBlueBot) || ( meBot+20 < hitBlueTop)) || ((meLeft-20 > hitBlueRight) || (meRight+20 < hitBlueLeft)))){
             $(".blue-msg").css("display", "block");
-            // if(e.which == 32){
-            //     $(".modal-detail").css("display", "block");
-            //     $(".image-map").addClass('blur');
-            //     $(".modal-detail").css("animation", "fadein .5s");
-            // }
+            $(".act-button").on("click", function(){
+                if(!((( meTop-20 > hitBlueBot) || ( meBot+20 < hitBlueTop)) || ((meLeft-20 > hitBlueRight) || (meRight+20 < hitBlueLeft)))){
+                    $(".modal-detail").css("display", "block");
+                    $(".modal-detail-achievement").css("display", "block");
+                    $(".home-display").addClass('dark');
+                    $(".modal-detail").css("animation", "fadein .5s");
+                }
+            })
         }else{
             $(".blue-msg").css("display", "none");
         }
@@ -388,11 +391,14 @@ $(document).ready(function(){
         //collision check with green hitbox
         if(!((( meTop-20 > hitGreenBot) || ( meBot+20 < hitGreenTop)) || ((meLeft-20 > hitGreenRight) || (meRight+20 < hitGreenLeft)))){
             $(".green-msg").css("display", "block");
-            // if(e.which == 32){
-            //     $(".modal-detail").css("display", "block");
-            //     $(".image-map").addClass('blur');
-            //     $(".modal-detail").css("animation", "fadein .5s");
-            // }
+            $(".act-button").on("click", function(){
+                if(!((( meTop-20 > hitGreenBot) || ( meBot+20 < hitGreenTop)) || ((meLeft-20 > hitGreenRight) || (meRight+20 < hitGreenLeft)))){
+                    $(".modal-detail").css("display", "block");
+                    $(".modal-detail-myinfo").css("display", "block");
+                    $(".home-display").addClass('dark');
+                    $(".modal-detail").css("animation", "fadein .5s");
+                }
+            })
         }else{
             $(".green-msg").css("display", "none");
         }
@@ -400,11 +406,14 @@ $(document).ready(function(){
         //collision check with Red hitbox
         if(!((( meTop-20 > hitRedBot) || ( meBot+20 < hitRedTop)) || ((meLeft-20 > hitRedRight) || (meRight+20 < hitRedLeft)))){
             $(".red-msg").css("display", "block");
-            // if(e.which == 32){
-            //     $(".modal-detail").css("display", "block");
-            //     $(".image-map").addClass('blur');
-            //     $(".modal-detail").css("animation", "fadein .5s");
-            // }
+            $(".act-button").on("click", function(){
+                if(!((( meTop-20 > hitRedBot) || ( meBot+20 < hitRedTop)) || ((meLeft-20 > hitRedRight) || (meRight+20 < hitRedLeft)))){
+                    $(".modal-detail").css("display", "block");
+                    $(".modal-detail-experience").css("display", "block");
+                    $(".home-display").addClass('dark');
+                    $(".modal-detail").css("animation", "fadein .5s");
+                }
+            })
         }else{
             $(".red-msg").css("display", "none");
         }
@@ -412,11 +421,14 @@ $(document).ready(function(){
         //collision check with Orange hitbox
         if(!((( meTop-20 > hitOrangeBot) || ( meBot+20 < hitOrangeTop)) || ((meLeft-20 > hitOrangeRight) || (meRight+20 < hitOrangeLeft)))){
             $(".orange-msg").css("display", "block");
-            // if(e.which == 32){
-            //     $(".modal-detail").css("display", "block");
-            //     $(".image-map").addClass('blur');
-            //     $(".modal-detail").css("animation", "fadein .5s");
-            // }
+            $(".act-button").on("click", function(){
+                if(!((( meTop-20 > hitOrangeBot) || ( meBot+20 < hitOrangeTop)) || ((meLeft-20 > hitOrangeRight) || (meRight+20 < hitOrangeLeft)))){
+                    $(".modal-detail").css("display", "block");
+                    $(".modal-detail-skills").css("display", "block");
+                    $(".home-display").addClass('dark');
+                    $(".modal-detail").css("animation", "fadein .5s");
+                }
+            })
         }else{
             $(".orange-msg").css("display", "none");
         }
@@ -424,11 +436,14 @@ $(document).ready(function(){
         //collision check with Purple hitbox
         if(!((( meTop-20 > hitPurpleBot) || ( meBot+20 < hitPurpleTop)) || ((meLeft-20 > hitPurpleRight) || (meRight+20 < hitPurpleLeft)))){
             $(".purple-msg").css("display", "block");
-            // if(e.which == 32){
-            //     $(".modal-detail").css("display", "block");
-            //     $(".image-map").addClass('blur');
-            //     $(".modal-detail").css("animation", "fadein .5s");
-            // }
+            $(".act-button").on("click", function(){
+                if(!((( meTop-20 > hitPurpleBot) || ( meBot+20 < hitPurpleTop)) || ((meLeft-20 > hitPurpleRight) || (meRight+20 < hitPurpleLeft)))){
+                    $(".modal-detail").css("display", "block");
+                    $(".modal-detail-education").css("display", "block");
+                    $(".home-display").addClass('dark');
+                    $(".modal-detail").css("animation", "fadein .5s");
+                }
+            })
         }else{
             $(".purple-msg").css("display", "none");
         }
@@ -436,11 +451,11 @@ $(document).ready(function(){
         //collision check with House hitbox
         if(!((( meTop-20 > hitHouseBot) || ( meBot+20 < hitHouseTop)) || ((meLeft-20 > hitHouseRight) || (meRight+20 < hitHouseLeft)))){
             $(".house-msg").css("display", "block");
-            // if(e.which == 32){
-            //     $(".modal-detail").css("display", "block");
-            //     $(".image-map").addClass('blur');
-            //     $(".modal-detail").css("animation", "fadein .5s");
-            // }
+            $(".act-button").on("click", function(){
+                if(!((( meTop-20 > hitHouseBot) || ( meBot+20 < hitHouseTop)) || ((meLeft-20 > hitHouseRight) || (meRight+20 < hitHouseLeft)))){
+                    window.location.replace("portfolio.html");
+                }
+            })
         }else{
             $(".house-msg").css("display", "none");
         }
@@ -448,16 +463,18 @@ $(document).ready(function(){
         //collision check with Menu hitbox
         if(!((( meTop > hitMenuBot) || ( meBot < hitMenuTop)) || ((meLeft > hitMenuRight) || (meRight < hitMenuLeft)))){
             $(".menu-msg").css("display", "block");
-            // if(e.which == 32){
-            //     window.location.replace("index.html");
-            // }
+            $(".act-button").on("click", function(){
+                if(!((( meTop > hitMenuBot) || ( meBot < hitMenuTop)) || ((meLeft > hitMenuRight) || (meRight < hitMenuLeft)))){
+                    window.location.replace("index.html");
+                }
+            })
         }else{
             $(".menu-msg").css("display", "none");
         }
         
-        if(mousedownID!=-1) {  //Only stop if exists
-            clearInterval(mousedownID);
-            mousedownID=-1;
+        if(touchstartID!=-1) {  //Only stop if exists
+            clearInterval(touchstartID);
+            touchstartID=-1;
         }
     })
 });

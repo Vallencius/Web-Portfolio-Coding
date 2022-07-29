@@ -78,7 +78,7 @@ $(document).ready(function () {
                     }
                     break;
                 case 40:  //bottom arrow key
-                    if((($(".me").position().top+$('.me').height()+0)<0) && //Checks wether .me is in bottom most screen
+                    if((($(".me").position().top+$('.me').height())<0) && //Checks wether .me is in bottom most screen
                         ((( meTop > hitKiriBot) || ( meBot+20 < hitKiriTop)) || ((meLeft > hitKiriRight) || (meRight < hitKiriLeft))) && //collision check with Kiri hitbox
                         ((( meTop > hitKananBot) || ( meBot+20 < hitKananTop)) || ((meLeft > hitKananRight) || (meRight < hitKananLeft))) && //collision check with Kanan hitbox
                         ((( meTop > hitFireBot) || ( meBot+20 < hitFireTop)) || ((meLeft > hitFireRight) || (meRight < hitFireLeft))) && //collision check with Fire hitbox

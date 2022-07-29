@@ -11,7 +11,7 @@
 .modal{
     position:absolute;
     color: white;
-    font-size: 85%;
+    font-size: 0.85rem;
     left: 0; 
     right: 0; 
     top: 35%; 
@@ -21,7 +21,7 @@
 .sub-modal{
     position:absolute;
     color: white;
-    font-size: 60%;
+    font-size: 0.6rem;
     left: 0; 
     right: 0; 
     top: 55%; 
@@ -55,9 +55,9 @@
 }
 .menu-msg{
     top: 75%;
-    left: 42.5%;
-    width: 175px;
-    height: 75px;
+    left: 40.5%;
+    width: 20%;
+    height: 15%;
 }
 
 .modal-detail{
@@ -80,6 +80,8 @@
     position: absolute;
     top: 0%;
     left:50%;
+    width: 100%;
+    height: 100%;
     transform: translate(-50%,0%);
 }
 
@@ -112,7 +114,8 @@
     cursor: pointer;
     top: 5%;
     right: 5%;
-    width: 30px;
+    width: 3%;
+    z-index: 99;
 }
 
 .modal-awal{
@@ -167,15 +170,100 @@
 
 .pas-foto{
     position: absolute;
-    left: 0;
-    top: 175%;
-    transform: translate(-75%, -50%);
-    width: 75%;
+    left: 25%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+}
+.modal-subtitle-info{
+    position: absolute;
+    left: 45%;
+    top: 60%;
+    transform: translate(0%, -50%);
+    width: 50%;
+    height: 60%;
+
+    font-family: "pixeboy";
+    font-size: 1rem;
+    overflow-y: scroll; 
+    overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 .modal-subtitle{
     position: absolute;
-    right: -50%;
-    top: 175%;
+    left: 10%;
+    top: 60%;
     transform: translate(0%, -50%);
-    width: 100%;
+    width: 80%;
+    height: 60%;
+
+    font-family: "pixeboy";
+    font-size: 1rem;
+    overflow-y: scroll; 
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+@media screen and (max-width: 769px){
+    .title-awal{
+        font-size: 2rem;
+        text-shadow: 1px 1px 0px white;
+    }
+    .subtitle-awal{
+        font-size: 1rem;
+    }
+    .continue-awal{
+        font-size: 1rem;
+    }
+    .modal{
+        font-size: 0.5rem;
+    } 
+    .sub-modal{
+        font-size: 0.35rem;
+    }
+    .modal-title{
+        font-size: 2rem;
+        text-shadow: 1px 1px 0px white;
+    }
+}
+@media screen and (max-height: 450px) and (min-width: 840px){
+    .title-awal{
+        font-size: 2rem;
+        text-shadow: 1px 1px 0px white;
+    }
+    .subtitle-awal{
+        font-size: 1rem;
+    }
+    .continue-awal{
+        font-size: 1rem;
+    }
+    .modal{
+        font-size: 0.6rem;
+    } 
+    .sub-modal{
+        font-size: 0.45rem;
+    }
+    .modal-title{
+        font-size: 2rem;
+        text-shadow: 1px 1px 0px white;
+    }
+    .modal-subtitle{
+        font-size: 0.85rem;
+    }
+}
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #000050;
+    border-radius: 10px;
 }

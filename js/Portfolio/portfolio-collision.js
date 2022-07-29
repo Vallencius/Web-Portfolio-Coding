@@ -4,6 +4,7 @@ $(document).ready(function () {
     var isOpen2 = 0;
     var isOpen3 = 0;
     var isOpen4 = 0;
+    var isOpenBack = 0;
     $(document).on('keyup',function (e){   
         // Hitboxes
         var meBot = (($(".me").position().top) + $(".me").height()+ $(".image-map").height());
@@ -33,19 +34,25 @@ $(document).ready(function () {
 
         //collision check with Door hitbox
         if(!((( meTop-20 > hitDoorBot) || ( meBot < hitDoorTop)) || ((meLeft-20 > hitDoorRight) || (meRight+20 < hitDoorLeft)))){
-            $(".door-msg").css("display", "block");
-            $(".image-map").addClass("dark");
-            if(e.which == 32){
-                window.location.replace("home.html");
+            if(!isOpenBack){
+                $(".door-msg").css("animation", "fadein .5s");
+                $(".door-msg").css("display", "block");
+                $(".image-map").addClass("dark");
+                isOpenBack = 1;
+                if(e.which == 32){
+                    window.location.replace("home.html");
+                }
             }
         }else{
+            isOpenBack = 0;
             $(".door-msg").css("display", "none");
         }
 
         //collision check with Port1 hitbox
         if(!((( meTop+20 > hitPort1Bot) || ( meBot+20 < hitPort1Top)) || ((meLeft+20 > hitPort1Right) || (meRight-20 < hitPort1Left)))){
             if(!isOpen1){
-                $(".portfolio-msg-1").css("display", "block");
+                $("#portfolio-msg-1").css("animation", "fadein .5s");
+                $("#portfolio-msg-1").css("display", "block");
                 $(".image-map").addClass("dark");
                 isOpen1 = 1;
             }
@@ -56,7 +63,8 @@ $(document).ready(function () {
         //collision check with Port2 hitbox
         if(!((( meTop+20 > hitPort2Bot) || ( meBot+20 < hitPort2Top)) || ((meLeft+20 > hitPort2Right) || (meRight-20 < hitPort2Left)))){
             if(!isOpen2){
-                $(".portfolio-msg-2").css("display", "block");
+                $("#portfolio-msg-2").css("animation", "fadein .5s");
+                $("#portfolio-msg-2").css("display", "block");
                 $(".image-map").addClass("dark");
                 isOpen2 = 1;
             }
@@ -67,7 +75,8 @@ $(document).ready(function () {
         //collision check with Port3 hitbox
         if(!((( meTop+20 > hitPort3Bot) || ( meBot+20 < hitPort3Top)) || ((meLeft+20 > hitPort3Right) || (meRight-20 < hitPort3Left)))){
             if(!isOpen3){
-                $(".portfolio-msg-3").css("display", "block");
+                $("#portfolio-msg-3").css("animation", "fadein .5s");
+                $("#portfolio-msg-3").css("display", "block");
                 $(".image-map").addClass("dark");
                 isOpen3 = 1;
             }
@@ -78,7 +87,8 @@ $(document).ready(function () {
         //collision check with Port4 hitbox
         if(!((( meTop+20 > hitPort4Bot) || ( meBot+20 < hitPort4Top)) || ((meLeft+20 > hitPort4Right) || (meRight-20 < hitPort4Left)))){
             if(!isOpen4){
-                $(".portfolio-msg-4").css("display", "block");
+                $("#portfolio-msg-4").css("animation", "fadein .5s");
+                $("#portfolio-msg-4").css("display", "block");
                 $(".image-map").addClass("dark");
                 isOpen4 = 1;
             }
@@ -88,32 +98,53 @@ $(document).ready(function () {
 
         $("#btn-close-1").on("click", function(){
             if(isOpen1){
-                $(".portfolio-msg-1").css("display", "none");
                 $(".image-map").removeClass("dark");
+                $("#portfolio-msg-1").css("animation", "fadeout .5s");
+                setTimeout(function(){
+                    $("#portfolio-msg-1").css("display", "none");
+                },500); 
             }
         });
         $("#btn-close-2").on("click", function(){
             if(isOpen2){
-                $(".portfolio-msg-1").css("display", "none");
                 $(".image-map").removeClass("dark");
+                $("#portfolio-msg-2").css("animation", "fadeout .5s");
+                setTimeout(function(){
+                    $("#portfolio-msg-2").css("display", "none");
+                },500); 
             }
         });
         $("#btn-close-3").on("click", function(){
             if(isOpen3){
-                $(".portfolio-msg-1").css("display", "none");
                 $(".image-map").removeClass("dark");
+                $("#portfolio-msg-3").css("animation", "fadeout .5s");
+                setTimeout(function(){
+                    $("#portfolio-msg-3").css("display", "none");
+                },500); 
             }
         });
         $("#btn-close-4").on("click", function(){
             if(isOpen4){
-                $(".portfolio-msg-1").css("display", "none");
                 $(".image-map").removeClass("dark");
+                $("#portfolio-msg-4").css("animation", "fadeout .5s");
+                setTimeout(function(){
+                    $("#portfolio-msg-4").css("display", "none");
+                },500); 
+            }
+        });
+        $(".btn-close-back").on("click", function(){
+            console.log(isOpenBack);
+            if(isOpenBack){
+                $(".image-map").removeClass("dark");
+                $(".door-msg").css("animation", "fadeout .5s");
+                setTimeout(function(){
+                    $(".door-msg").css("display", "none");
+                },500); 
             }
         });
 
     });
     $(document).on('keydown',function (e){
-    //collision check with blue hitbox
         $(".portfolio-msg").css("display", "none");
         $(".door-msg").css("display", "none");
         $(".image-map").removeClass("dark");
