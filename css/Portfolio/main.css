@@ -236,8 +236,27 @@ body{
 
 .portfolio-img{
     width: 50%;
+    -webkit-transition-property: all; 
+    -webkit-transition-duration: 0.5s; 
+    -webkit-transition-timing-function: ease; 
+}
+.portfolio-img:hover{
+    width: 80%;
+}
+.portfolio-logo{
+    position: absolute;
+    left: 8%;
+    top: 10%;
+    width: 8%;
+    cursor:pointer;
+    -webkit-transition-property: all; 
+    -webkit-transition-duration: 0.5s; 
+    -webkit-transition-timing-function: ease; 
 }
 
+.portfolio-logo:hover{
+    width: 10%;
+}
 @keyframes fadein {
 	from {
 		opacity:0;
