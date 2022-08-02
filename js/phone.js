@@ -19,7 +19,7 @@ $(document).ready(function(){
             return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
         }
     };
-    if( isMobile.Android() ) alert('Android');
-    if( isMobile.iOS() ) alert('iOS');
-    if( isMobile.Windows() ) alert('Windows');
+    if( isMobile.Android() || isMobile.iOS() ){
+        $("body").addClass("phone");
+    };
 })

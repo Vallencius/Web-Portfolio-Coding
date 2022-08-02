@@ -152,48 +152,48 @@ body{
     text-decoration: none !important;
 }
 @media screen and (max-width: 769px){
-    .title{
+    .phone .title{
         font-size: 4rem;
     }
-    .sub-title{
+    .phone .sub-title{
         font-size: 2rem;
     }
-    .sub-title:hover{
+    .phone .sub-title:hover{
         font-size: 2rem;
     }
-    .copyright-bot{
+    .phone .copyright-bot{
         font-size: 1rem;
     }
-    .about-title{
+    .phone .about-title{
         font-size: 2rem;
     }
-    .about-detail{
+    .phone .about-detail{
         font-size: 0.7rem;
     }
-    .contact-info{
+    .phone .contact-info{
         font-size: 24px;
     }
 }
 @media screen and (max-height: 450px) and (min-width: 840px){
-    .title{
+    .phone .title{
         font-size: 3rem;
     }
-    .sub-title{
+    .phone .sub-title{
         font-size: 1.5rem;
     }
-    .sub-title:hover{
+    .phone .sub-title:hover{
         font-size: 1.5rem;
     }
-    .copyright-bot{
+    .phone .copyright-bot{
         font-size: 0.7rem;
     }
-    .about-title{
+    .phone .about-title{
         font-size: 2rem;
     }
-    .about-detail{
+    .phone .about-detail{
         font-size: 0.7rem;
     }
-    .contact-info{
+    .phone .contact-info{
         font-size: 24px;
     }
 }
