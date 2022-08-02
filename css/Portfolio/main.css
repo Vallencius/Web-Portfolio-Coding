@@ -289,6 +289,9 @@ body{
     .portfolio-subtitle{
         font-size: 1rem;
     }
+    .list-portfolio{
+        font-size: 1rem;
+    }
 }
 @media screen and (max-width: 769px){
     .title-awal{
@@ -311,6 +314,9 @@ body{
         font-size: 1.5rem;
     }
     .portfolio-subtitle{
+        font-size: 0.7rem;
+    }
+    .list-portfolio{
         font-size: 0.7rem;
     }
     .btn-subtitle{
