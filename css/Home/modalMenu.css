@@ -223,6 +223,12 @@
         font-size: 2rem;
         text-shadow: 1px 1px 0px white;
     }
+    .modal-subtitle{
+        font-size: 0.7rem;
+    }
+    .modal-subtitle-info{
+        font-size: 0.7rem;
+    }
 }
 @media screen and (max-height: 450px) and (min-width: 840px){
     .title-awal{
@@ -246,6 +252,9 @@
         text-shadow: 1px 1px 0px white;
     }
     .modal-subtitle{
+        font-size: 0.85rem;
+    }
+    .modal-subtitle-info{
         font-size: 0.85rem;
     }
 }
