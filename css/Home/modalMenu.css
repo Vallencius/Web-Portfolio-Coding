@@ -202,6 +202,50 @@
     overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
+.title-in-ach{
+    font-size: 1.2rem;
+    margin-bottom: 0 !important;
+}
+.subtitle-in-ach{
+    margin-left: 5%;
+    margin-bottom: 4%;
+    margin-top: 0 !important;
+}
+
+.title-in-exp{
+    font-size: 1.2rem;
+    margin-bottom: 0 !important;
+}
+.subtitle-in-exp{
+    margin-bottom: 4%;
+    margin-top: 0 !important;
+}
+
+.title-in-skill{
+    font-size: 1.2rem;
+    margin-bottom: 0 !important;
+}
+.subtitle-in-skill{
+    margin-left: 5%;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+}
+
+.date-in-edu{
+    text-align: right;
+    margin-bottom: 0 !important;
+}
+.title-in-edu{
+    font-size: 1.2rem;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+.subtitle-in-edu{
+    margin-left: 5%;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+}
+
 @media screen and (max-width: 769px){
     .title-awal{
         font-size: 2rem;
