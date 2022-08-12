@@ -273,6 +273,30 @@
     .modal-subtitle-info{
         font-size: 0.7rem;
     }
+    .title-in-ach{
+        font-size: 0.8rem;
+    }
+    .title-in-exp{
+        font-size: 0.8rem;
+    }
+    .title-in-edu{
+        font-size: 0.8rem;
+    }
+    .title-in-skill{
+        font-size: 0.8rem;
+    }
+    .subtitle-in-ach{
+        font-size: 0.7rem;
+    }
+    .subtitle-in-exp{
+        font-size: 0.7rem;
+    }
+    .subtitle-in-edu{
+        font-size: 0.7rem;
+    }
+    .subtitle-in-skill{
+        font-size: 0.7rem;
+    }
 }
 @media screen and (max-height: 450px) and (min-width: 840px){
     .title-awal{
@@ -300,6 +324,30 @@
     }
     .modal-subtitle-info{
         font-size: 0.85rem;
+    }
+    .title-in-ach{
+        font-size: 0.8rem;
+    }
+    .title-in-exp{
+        font-size: 0.8rem;
+    }
+    .title-in-edu{
+        font-size: 0.8rem;
+    }
+    .title-in-skill{
+        font-size: 0.8rem;
+    }
+    .subtitle-in-ach{
+        font-size: 0.7rem;
+    }
+    .subtitle-in-exp{
+        font-size: 0.7rem;
+    }
+    .subtitle-in-edu{
+        font-size: 0.7rem;
+    }
+    .subtitle-in-skill{
+        font-size: 0.7rem;
     }
 }
 
