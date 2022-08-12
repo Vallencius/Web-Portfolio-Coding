@@ -7,9 +7,13 @@
     width: 20%;
 }
 .arr-button{
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
     width: 20%;
 }
 .btn-action{
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
     display: none;
     position: absolute;
     bottom: 0;
