@@ -257,6 +257,15 @@ body{
 .portfolio-logo:hover{
     width: 10%;
 }
+
+.tutorial{
+    position: absolute;
+    bottom: 20%;
+    left:50%;
+    transform: translate(-50%, 0%);
+    height: 25%;
+}
+
 @keyframes fadein {
 	from {
 		opacity:0;
