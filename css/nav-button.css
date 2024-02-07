@@ -4,7 +4,7 @@
     bottom: 0;
     left: 0;
     height: 20%;
-    width: 20%;
+    width:20%;
 }
 .arr-button{
     -webkit-touch-callout: none !important;
@@ -24,8 +24,8 @@
     height: 20%;
 }
 .act-button{
-    width: 20%;
-    height: 35%;
+    width: 30%;
+    height: 52.5%;
     background-image: url(../images/action-button.png);
     background-size: 100% 100%;
     border: none;
@@ -34,32 +34,32 @@
 .arrow-up{
     display: none;
     position: absolute;
-    bottom: 9%;
+    bottom: 12%;
     left: 0;
     height: 20%;
     width: 20%;
 }
 .up-button{
-    width: 20%;
-    height: 35%;
+    width: 30%;
+    height: 52.5%;
     background-image: url(../images/up-button.png);
     background-size: 100% 100%;
 }
 .left-button{
-    width: 20%;
-    height: 35%;
+    width: 30%;
+    height: 52.5%;
     background-image: url(../images/left-button.png);
     background-size: 100% 100%;
 }
 .down-button{
-    width: 20%;
-    height: 35%;
+    width: 30%;
+    height: 52.5%;
     background-image: url(../images/down-button.png);
     background-size: 100% 100%;
 }
 .right-button{
-    width: 20%;
-    height: 35%;
+    width: 30%;
+    height: 52.5%;
     background-image: url(../images/right-button.png);
     background-size: 100% 100%;
 }

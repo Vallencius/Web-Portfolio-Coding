@@ -478,3 +478,8 @@ $(document).ready(function(){
         }
     })
 });
+
+// stop long touch hold from poping up context menus
+$(document).on('contextmenu', function (e) {
+    return false;
+});
