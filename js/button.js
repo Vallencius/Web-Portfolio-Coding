@@ -1,5 +1,6 @@
 $(document).ready(function(){
     var touchstartID=-1;
+    const movement = $(window).width()/40;
 
     $(".help").on("click", function(){
         $(".modal-awal").css("animation", "fadein .5s");
@@ -108,21 +109,21 @@ $(document).ready(function(){
                     hitMenuLeft = $(".hitbox-pantai-menu").position().left;
                     hitMenuRight = $(".hitbox-pantai-menu").position().left + $(".hitbox-pantai-menu").width();
                     if(meLeft > 0 && //Checks wether .me is in left most screen
-                        ((( meTop > hitBlueBot) || ( meBot < hitBlueTop)) || ((meLeft-20 > hitBlueRight) || (meRight < hitBlueLeft))) && //collision check with blue hitbox
-                        ((( meTop > hitGreenBot) || ( meBot < hitGreenTop)) || ((meLeft-20 > hitGreenRight) || (meRight < hitGreenLeft))) && //collision check with green hitbox
-                        ((( meTop > hitRedBot) || ( meBot < hitRedTop)) || ((meLeft-20 > hitRedRight) || (meRight < hitRedLeft))) && //collision check with red hitbox
-                        ((( meTop > hitOrangeBot) || ( meBot < hitOrangeTop)) || ((meLeft-20 > hitOrangeRight) || (meRight < hitOrangeLeft))) && //collision check with orange hitbox
-                        ((( meTop > hitPurpleBot) || ( meBot < hitPurpleTop)) || ((meLeft-20 > hitPurpleRight) || (meRight < hitPurpleLeft))) && //collision check with purple hitbox
-                        ((( meTop > hitHouseBot) || ( meBot < hitHouseTop)) || ((meLeft-20 > hitHouseRight) || (meRight < hitHouseLeft))) && //collision check with house hitbox
-                        ((( meTop > hitPantaiKiriBot) || ( meBot < hitPantaiKiriTop)) || ((meLeft-20 > hitPantaiKiriRight) || (meRight < hitPantaiKiriLeft))) && //collision check with pantai Kiri hitbox
-                        ((( meTop > hitPantaiKananBot) || ( meBot < hitPantaiKananTop)) || ((meLeft-20 > hitPantaiKananRight) || (meRight < hitPantaiKananLeft))) //collision check with pantai Kanan hitbox
+                        ((( meTop > hitBlueBot) || ( meBot < hitBlueTop)) || ((meLeft-movement > hitBlueRight) || (meRight < hitBlueLeft))) && //collision check with blue hitbox
+                        ((( meTop > hitGreenBot) || ( meBot < hitGreenTop)) || ((meLeft-movement > hitGreenRight) || (meRight < hitGreenLeft))) && //collision check with green hitbox
+                        ((( meTop > hitRedBot) || ( meBot < hitRedTop)) || ((meLeft-movement > hitRedRight) || (meRight < hitRedLeft))) && //collision check with red hitbox
+                        ((( meTop > hitOrangeBot) || ( meBot < hitOrangeTop)) || ((meLeft-movement > hitOrangeRight) || (meRight < hitOrangeLeft))) && //collision check with orange hitbox
+                        ((( meTop > hitPurpleBot) || ( meBot < hitPurpleTop)) || ((meLeft-movement > hitPurpleRight) || (meRight < hitPurpleLeft))) && //collision check with purple hitbox
+                        ((( meTop > hitHouseBot) || ( meBot < hitHouseTop)) || ((meLeft-movement > hitHouseRight) || (meRight < hitHouseLeft))) && //collision check with house hitbox
+                        ((( meTop > hitPantaiKiriBot) || ( meBot < hitPantaiKiriTop)) || ((meLeft-movement > hitPantaiKiriRight) || (meRight < hitPantaiKiriLeft))) && //collision check with pantai Kiri hitbox
+                        ((( meTop > hitPantaiKananBot) || ( meBot < hitPantaiKananTop)) || ((meLeft-movement > hitPantaiKananRight) || (meRight < hitPantaiKananLeft))) //collision check with pantai Kanan hitbox
                     ){ 
                         $('.sprite-left').css("opacity", 1);
                         $('.sprite-right').css("opacity", 0);
                         $('.sprite-up').css("opacity", 0);
                         $('.sprite-down').css("opacity", 0);
                         $('.me').stop().animate({
-                            left: '-=20'
+                            left: '-=' + movement
                         }, 100, 'linear'); 
                     }
                 }
@@ -174,21 +175,21 @@ $(document).ready(function(){
                     hitMenuRight = $(".hitbox-pantai-menu").position().left + $(".hitbox-pantai-menu").width();
 
                     if((Math.abs($(".me").position().top)<$(".image-map").height()) && //Checks wether .me is in top most screen
-                        ((( meTop-20 > hitBlueBot) || ( meBot < hitBlueTop)) || ((meLeft > hitBlueRight) || (meRight < hitBlueLeft))) && //collision check with blue hitbox
-                        ((( meTop-20 > hitGreenBot) || ( meBot < hitGreenTop)) || ((meLeft > hitGreenRight) || (meRight < hitGreenLeft))) && //collision check with green hitbox
-                        ((( meTop-20 > hitRedBot) || ( meBot < hitRedTop)) || ((meLeft > hitRedRight) || (meRight < hitRedLeft))) && //collision check with ref hitbox
-                        ((( meTop-20 > hitOrangeBot) || ( meBot < hitOrangeTop)) || ((meLeft > hitOrangeRight) || (meRight < hitOrangeLeft))) &&//collision check with orange hitbox
-                        ((( meTop-20 > hitPurpleBot) || ( meBot < hitPurpleTop)) || ((meLeft > hitPurpleRight) || (meRight < hitPurpleLeft))) && //collision check with purple hitbox
-                        ((( meTop-20 > hitHouseBot) || ( meBot < hitHouseTop)) || ((meLeft > hitHouseRight) || (meRight < hitHouseLeft))) && //collision check with house hitbox
-                        ((( meTop-20 > hitPantaiKiriBot) || ( meBot < hitPantaiKiriTop)) || ((meLeft > hitPantaiKiriRight) || (meRight < hitPantaiKiriLeft))) && //collision check with pantai kiri hitbox
-                        ((( meTop-20 > hitPantaiKananBot) || ( meBot < hitPantaiKananTop)) || ((meLeft > hitPantaiKananRight) || (meRight < hitPantaiKananLeft))) //collision check with pantai kanan hitbox
+                        ((( meTop-movement > hitBlueBot) || ( meBot < hitBlueTop)) || ((meLeft > hitBlueRight) || (meRight < hitBlueLeft))) && //collision check with blue hitbox
+                        ((( meTop-movement > hitGreenBot) || ( meBot < hitGreenTop)) || ((meLeft > hitGreenRight) || (meRight < hitGreenLeft))) && //collision check with green hitbox
+                        ((( meTop-movement > hitRedBot) || ( meBot < hitRedTop)) || ((meLeft > hitRedRight) || (meRight < hitRedLeft))) && //collision check with ref hitbox
+                        ((( meTop-movement > hitOrangeBot) || ( meBot < hitOrangeTop)) || ((meLeft > hitOrangeRight) || (meRight < hitOrangeLeft))) &&//collision check with orange hitbox
+                        ((( meTop-movement > hitPurpleBot) || ( meBot < hitPurpleTop)) || ((meLeft > hitPurpleRight) || (meRight < hitPurpleLeft))) && //collision check with purple hitbox
+                        ((( meTop-movement > hitHouseBot) || ( meBot < hitHouseTop)) || ((meLeft > hitHouseRight) || (meRight < hitHouseLeft))) && //collision check with house hitbox
+                        ((( meTop-movement > hitPantaiKiriBot) || ( meBot < hitPantaiKiriTop)) || ((meLeft > hitPantaiKiriRight) || (meRight < hitPantaiKiriLeft))) && //collision check with pantai kiri hitbox
+                        ((( meTop-movement > hitPantaiKananBot) || ( meBot < hitPantaiKananTop)) || ((meLeft > hitPantaiKananRight) || (meRight < hitPantaiKananLeft))) //collision check with pantai kanan hitbox
                     ){
                         $('.sprite-left').css("opacity", 0);
                         $('.sprite-right').css("opacity", 0);
                         $('.sprite-up').css("opacity", 1);
                         $('.sprite-down').css("opacity", 0);
                         $('.me').stop().animate({
-                            top: '-=20'
+                            top: '-=' + movement
                         }, 100, 'linear'); 
                     }
                 }
@@ -241,21 +242,21 @@ $(document).ready(function(){
                     hitMenuRight = $(".hitbox-pantai-menu").position().left + $(".hitbox-pantai-menu").width();
 
                     if(meRight < $(".image-map").width() && //Checks wether .me is in right most screen
-                        ((( meTop > hitBlueBot) || ( meBot < hitBlueTop)) || ((meLeft > hitBlueRight) || (meRight+20 < hitBlueLeft))) && //collision check with blue hitbox
-                        ((( meTop > hitGreenBot) || ( meBot < hitGreenTop)) || ((meLeft > hitGreenRight) || (meRight+20 < hitGreenLeft))) && //collision check with green hitbox
-                        ((( meTop > hitRedBot) || ( meBot < hitRedTop)) || ((meLeft > hitRedRight) || (meRight+20 < hitRedLeft))) && //collision check with red hitbox
-                        ((( meTop > hitOrangeBot) || ( meBot < hitOrangeTop)) || ((meLeft > hitOrangeRight) || (meRight+20 < hitOrangeLeft))) && //collision check with orange hitbox
-                        ((( meTop > hitPurpleBot) || ( meBot < hitPurpleTop)) || ((meLeft > hitPurpleRight) || (meRight+20 < hitPurpleLeft))) && //collision check with purple hitbox
-                        ((( meTop > hitHouseBot) || ( meBot < hitHouseTop)) || ((meLeft > hitHouseRight) || (meRight+20 < hitHouseLeft))) && //collision check with house hitbox
-                        ((( meTop > hitPantaiKiriBot) || ( meBot < hitPantaiKiriTop)) || ((meLeft > hitPantaiKiriRight) || (meRight+20 < hitPantaiKiriLeft))) && //collision check with pantai kiri hitbox
-                        ((( meTop > hitPantaiKananBot) || ( meBot < hitPantaiKananTop)) || ((meLeft > hitPantaiKananRight) || (meRight+20 < hitPantaiKananLeft))) //collision check with pantai kanan hitbox
+                        ((( meTop > hitBlueBot) || ( meBot < hitBlueTop)) || ((meLeft > hitBlueRight) || (meRight+movement < hitBlueLeft))) && //collision check with blue hitbox
+                        ((( meTop > hitGreenBot) || ( meBot < hitGreenTop)) || ((meLeft > hitGreenRight) || (meRight+movement < hitGreenLeft))) && //collision check with green hitbox
+                        ((( meTop > hitRedBot) || ( meBot < hitRedTop)) || ((meLeft > hitRedRight) || (meRight+movement < hitRedLeft))) && //collision check with red hitbox
+                        ((( meTop > hitOrangeBot) || ( meBot < hitOrangeTop)) || ((meLeft > hitOrangeRight) || (meRight+movement < hitOrangeLeft))) && //collision check with orange hitbox
+                        ((( meTop > hitPurpleBot) || ( meBot < hitPurpleTop)) || ((meLeft > hitPurpleRight) || (meRight+movement < hitPurpleLeft))) && //collision check with purple hitbox
+                        ((( meTop > hitHouseBot) || ( meBot < hitHouseTop)) || ((meLeft > hitHouseRight) || (meRight+movement < hitHouseLeft))) && //collision check with house hitbox
+                        ((( meTop > hitPantaiKiriBot) || ( meBot < hitPantaiKiriTop)) || ((meLeft > hitPantaiKiriRight) || (meRight+movement < hitPantaiKiriLeft))) && //collision check with pantai kiri hitbox
+                        ((( meTop > hitPantaiKananBot) || ( meBot < hitPantaiKananTop)) || ((meLeft > hitPantaiKananRight) || (meRight+movement < hitPantaiKananLeft))) //collision check with pantai kanan hitbox
                     ){
                         $('.sprite-left').css("opacity", 0);
                         $('.sprite-right').css("opacity", 1);
                         $('.sprite-up').css("opacity", 0);
                         $('.sprite-down').css("opacity", 0);
                         $('.me').stop().animate({
-                            left: '+=20'
+                            left: '+=' + movement
                         }, 100, 'linear'); 
                     }
                 }
@@ -308,21 +309,21 @@ $(document).ready(function(){
                     hitMenuRight = $(".hitbox-pantai-menu").position().left + $(".hitbox-pantai-menu").width();
 
                     if((($(".me").position().top+$('.me').height()+40)<0) && //Checks wether .me is in bottom most screen
-                        ((( meTop > hitBlueBot) || ( meBot+20 < hitBlueTop)) || ((meLeft > hitBlueRight) || (meRight < hitBlueLeft))) && //collision check with blue hitbox
-                        ((( meTop > hitGreenBot) || ( meBot+20 < hitGreenTop)) || ((meLeft > hitGreenRight) || (meRight < hitGreenLeft))) && //collision check with green hitbox
-                        ((( meTop > hitRedBot) || ( meBot+20 < hitRedTop)) || ((meLeft > hitRedRight) || (meRight < hitRedLeft))) && //collision check with red hitbox
-                        ((( meTop > hitOrangeBot) || ( meBot+20 < hitOrangeTop)) || ((meLeft > hitOrangeRight) || (meRight < hitOrangeLeft))) && //collision check with orange hitbox
-                        ((( meTop > hitPurpleBot) || ( meBot+20 < hitPurpleTop)) || ((meLeft > hitPurpleRight) || (meRight < hitPurpleLeft))) &&//collision check with purple hitbox
-                        ((( meTop > hitHouseBot) || ( meBot+20 < hitHouseTop)) || ((meLeft > hitHouseRight) || (meRight < hitHouseLeft))) && //collision check with house hitbox
-                        ((( meTop > hitPantaiKiriBot) || ( meBot+20 < hitPantaiKiriTop)) || ((meLeft > hitPantaiKiriRight) || (meRight < hitPantaiKiriLeft))) && //collision check with pantai kiri hitbox
-                        ((( meTop > hitPantaiKananBot) || ( meBot+20 < hitPantaiKananTop)) || ((meLeft > hitPantaiKananRight) || (meRight < hitPantaiKananLeft))) //collision check with pantai kanan hitbox
+                        ((( meTop > hitBlueBot) || ( meBot+movement < hitBlueTop)) || ((meLeft > hitBlueRight) || (meRight < hitBlueLeft))) && //collision check with blue hitbox
+                        ((( meTop > hitGreenBot) || ( meBot+movement < hitGreenTop)) || ((meLeft > hitGreenRight) || (meRight < hitGreenLeft))) && //collision check with green hitbox
+                        ((( meTop > hitRedBot) || ( meBot+movement < hitRedTop)) || ((meLeft > hitRedRight) || (meRight < hitRedLeft))) && //collision check with red hitbox
+                        ((( meTop > hitOrangeBot) || ( meBot+movement < hitOrangeTop)) || ((meLeft > hitOrangeRight) || (meRight < hitOrangeLeft))) && //collision check with orange hitbox
+                        ((( meTop > hitPurpleBot) || ( meBot+movement < hitPurpleTop)) || ((meLeft > hitPurpleRight) || (meRight < hitPurpleLeft))) &&//collision check with purple hitbox
+                        ((( meTop > hitHouseBot) || ( meBot+movement < hitHouseTop)) || ((meLeft > hitHouseRight) || (meRight < hitHouseLeft))) && //collision check with house hitbox
+                        ((( meTop > hitPantaiKiriBot) || ( meBot+movement < hitPantaiKiriTop)) || ((meLeft > hitPantaiKiriRight) || (meRight < hitPantaiKiriLeft))) && //collision check with pantai kiri hitbox
+                        ((( meTop > hitPantaiKananBot) || ( meBot+movement < hitPantaiKananTop)) || ((meLeft > hitPantaiKananRight) || (meRight < hitPantaiKananLeft))) //collision check with pantai kanan hitbox
                     ){ 
                         $('.sprite-left').css("opacity", 0);
                         $('.sprite-right').css("opacity", 0);
                         $('.sprite-up').css("opacity", 0);
                         $('.sprite-down').css("opacity", 1);
                         $('.me').stop().animate({
-                            top: '+=20'
+                            top: '+=' + movement
                         }, 100, 'linear');
                     }
                 }
@@ -374,10 +375,10 @@ $(document).ready(function(){
         hitMenuRight = $(".hitbox-pantai-menu").position().left + $(".hitbox-pantai-menu").width();
 
         //collision check with blue hitbox
-        if(!((( meTop-20 > hitBlueBot) || ( meBot+20 < hitBlueTop)) || ((meLeft-20 > hitBlueRight) || (meRight+20 < hitBlueLeft)))){
+        if(!((( meTop-movement > hitBlueBot) || ( meBot+movement < hitBlueTop)) || ((meLeft-movement > hitBlueRight) || (meRight+movement < hitBlueLeft)))){
             $(".blue-msg").css("display", "block");
             $(".act-button").on("click", function(){
-                if(!((( meTop-20 > hitBlueBot) || ( meBot+20 < hitBlueTop)) || ((meLeft-20 > hitBlueRight) || (meRight+20 < hitBlueLeft)))){
+                if(!((( meTop-movement > hitBlueBot) || ( meBot+movement < hitBlueTop)) || ((meLeft-movement > hitBlueRight) || (meRight+movement < hitBlueLeft)))){
                     $(".modal-detail").css("display", "block");
                     $(".modal-detail-achievement").css("display", "block");
                     $(".home-display").addClass('dark');
@@ -389,10 +390,10 @@ $(document).ready(function(){
         }
         
         //collision check with green hitbox
-        if(!((( meTop-20 > hitGreenBot) || ( meBot+20 < hitGreenTop)) || ((meLeft-20 > hitGreenRight) || (meRight+20 < hitGreenLeft)))){
+        if(!((( meTop-movement > hitGreenBot) || ( meBot+movement < hitGreenTop)) || ((meLeft-movement > hitGreenRight) || (meRight+movement < hitGreenLeft)))){
             $(".green-msg").css("display", "block");
             $(".act-button").on("click", function(){
-                if(!((( meTop-20 > hitGreenBot) || ( meBot+20 < hitGreenTop)) || ((meLeft-20 > hitGreenRight) || (meRight+20 < hitGreenLeft)))){
+                if(!((( meTop-movement > hitGreenBot) || ( meBot+movement < hitGreenTop)) || ((meLeft-movement > hitGreenRight) || (meRight+movement < hitGreenLeft)))){
                     $(".modal-detail").css("display", "block");
                     $(".modal-detail-myinfo").css("display", "block");
                     $(".home-display").addClass('dark');
@@ -404,10 +405,10 @@ $(document).ready(function(){
         }
 
         //collision check with Red hitbox
-        if(!((( meTop-20 > hitRedBot) || ( meBot+20 < hitRedTop)) || ((meLeft-20 > hitRedRight) || (meRight+20 < hitRedLeft)))){
+        if(!((( meTop-movement > hitRedBot) || ( meBot+movement < hitRedTop)) || ((meLeft-movement > hitRedRight) || (meRight+movement < hitRedLeft)))){
             $(".red-msg").css("display", "block");
             $(".act-button").on("click", function(){
-                if(!((( meTop-20 > hitRedBot) || ( meBot+20 < hitRedTop)) || ((meLeft-20 > hitRedRight) || (meRight+20 < hitRedLeft)))){
+                if(!((( meTop-movement > hitRedBot) || ( meBot+movement < hitRedTop)) || ((meLeft-movement > hitRedRight) || (meRight+movement < hitRedLeft)))){
                     $(".modal-detail").css("display", "block");
                     $(".modal-detail-experience").css("display", "block");
                     $(".home-display").addClass('dark');
@@ -419,10 +420,10 @@ $(document).ready(function(){
         }
 
         //collision check with Orange hitbox
-        if(!((( meTop-20 > hitOrangeBot) || ( meBot+20 < hitOrangeTop)) || ((meLeft-20 > hitOrangeRight) || (meRight+20 < hitOrangeLeft)))){
+        if(!((( meTop-movement > hitOrangeBot) || ( meBot+movement < hitOrangeTop)) || ((meLeft-movement > hitOrangeRight) || (meRight+movement < hitOrangeLeft)))){
             $(".orange-msg").css("display", "block");
             $(".act-button").on("click", function(){
-                if(!((( meTop-20 > hitOrangeBot) || ( meBot+20 < hitOrangeTop)) || ((meLeft-20 > hitOrangeRight) || (meRight+20 < hitOrangeLeft)))){
+                if(!((( meTop-movement > hitOrangeBot) || ( meBot+movement < hitOrangeTop)) || ((meLeft-movement > hitOrangeRight) || (meRight+movement < hitOrangeLeft)))){
                     $(".modal-detail").css("display", "block");
                     $(".modal-detail-skills").css("display", "block");
                     $(".home-display").addClass('dark');
@@ -434,10 +435,10 @@ $(document).ready(function(){
         }
 
         //collision check with Purple hitbox
-        if(!((( meTop-20 > hitPurpleBot) || ( meBot+20 < hitPurpleTop)) || ((meLeft-20 > hitPurpleRight) || (meRight+20 < hitPurpleLeft)))){
+        if(!((( meTop-movement > hitPurpleBot) || ( meBot+movement < hitPurpleTop)) || ((meLeft-movement > hitPurpleRight) || (meRight+movement < hitPurpleLeft)))){
             $(".purple-msg").css("display", "block");
             $(".act-button").on("click", function(){
-                if(!((( meTop-20 > hitPurpleBot) || ( meBot+20 < hitPurpleTop)) || ((meLeft-20 > hitPurpleRight) || (meRight+20 < hitPurpleLeft)))){
+                if(!((( meTop-movement > hitPurpleBot) || ( meBot+movement < hitPurpleTop)) || ((meLeft-movement > hitPurpleRight) || (meRight+movement < hitPurpleLeft)))){
                     $(".modal-detail").css("display", "block");
                     $(".modal-detail-education").css("display", "block");
                     $(".home-display").addClass('dark');
@@ -449,10 +450,10 @@ $(document).ready(function(){
         }
         
         //collision check with House hitbox
-        if(!((( meTop-20 > hitHouseBot) || ( meBot+20 < hitHouseTop)) || ((meLeft-20 > hitHouseRight) || (meRight+20 < hitHouseLeft)))){
+        if(!((( meTop-movement > hitHouseBot) || ( meBot+movement < hitHouseTop)) || ((meLeft-movement > hitHouseRight) || (meRight+movement < hitHouseLeft)))){
             $(".house-msg").css("display", "block");
             $(".act-button").on("click", function(){
-                if(!((( meTop-20 > hitHouseBot) || ( meBot+20 < hitHouseTop)) || ((meLeft-20 > hitHouseRight) || (meRight+20 < hitHouseLeft)))){
+                if(!((( meTop-movement > hitHouseBot) || ( meBot+movement < hitHouseTop)) || ((meLeft-movement > hitHouseRight) || (meRight+movement < hitHouseLeft)))){
                     window.location.replace("portfolio.html");
                 }
             })

@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    const movement = $(window).width()/40;
+
     $(document).on('keydown',function (e){   
         if (!$('.me').is(':animated'))  {   
             // Hitboxes
@@ -43,81 +45,81 @@ $(document).ready(function () {
             switch(e.which){
                 case 37: //left arrow key
                     if(meLeft > 0 && //Checks wether .me is in left most screen
-                        ((( meTop > hitBlueBot) || ( meBot < hitBlueTop)) || ((meLeft-20 > hitBlueRight) || (meRight < hitBlueLeft))) && //collision check with blue hitbox
-                        ((( meTop > hitGreenBot) || ( meBot < hitGreenTop)) || ((meLeft-20 > hitGreenRight) || (meRight < hitGreenLeft))) && //collision check with green hitbox
-                        ((( meTop > hitRedBot) || ( meBot < hitRedTop)) || ((meLeft-20 > hitRedRight) || (meRight < hitRedLeft))) && //collision check with red hitbox
-                        ((( meTop > hitOrangeBot) || ( meBot < hitOrangeTop)) || ((meLeft-20 > hitOrangeRight) || (meRight < hitOrangeLeft))) && //collision check with orange hitbox
-                        ((( meTop > hitPurpleBot) || ( meBot < hitPurpleTop)) || ((meLeft-20 > hitPurpleRight) || (meRight < hitPurpleLeft))) && //collision check with purple hitbox
-                        ((( meTop > hitHouseBot) || ( meBot < hitHouseTop)) || ((meLeft-20 > hitHouseRight) || (meRight < hitHouseLeft))) && //collision check with house hitbox
-                        ((( meTop > hitPantaiKiriBot) || ( meBot < hitPantaiKiriTop)) || ((meLeft-20 > hitPantaiKiriRight) || (meRight < hitPantaiKiriLeft))) && //collision check with pantai Kiri hitbox
-                        ((( meTop > hitPantaiKananBot) || ( meBot < hitPantaiKananTop)) || ((meLeft-20 > hitPantaiKananRight) || (meRight < hitPantaiKananLeft))) //collision check with pantai Kanan hitbox
+                        ((( meTop > hitBlueBot) || ( meBot < hitBlueTop)) || ((meLeft-movement > hitBlueRight) || (meRight < hitBlueLeft))) && //collision check with blue hitbox
+                        ((( meTop > hitGreenBot) || ( meBot < hitGreenTop)) || ((meLeft-movement > hitGreenRight) || (meRight < hitGreenLeft))) && //collision check with green hitbox
+                        ((( meTop > hitRedBot) || ( meBot < hitRedTop)) || ((meLeft-movement > hitRedRight) || (meRight < hitRedLeft))) && //collision check with red hitbox
+                        ((( meTop > hitOrangeBot) || ( meBot < hitOrangeTop)) || ((meLeft-movement > hitOrangeRight) || (meRight < hitOrangeLeft))) && //collision check with orange hitbox
+                        ((( meTop > hitPurpleBot) || ( meBot < hitPurpleTop)) || ((meLeft-movement > hitPurpleRight) || (meRight < hitPurpleLeft))) && //collision check with purple hitbox
+                        ((( meTop > hitHouseBot) || ( meBot < hitHouseTop)) || ((meLeft-movement > hitHouseRight) || (meRight < hitHouseLeft))) && //collision check with house hitbox
+                        ((( meTop > hitPantaiKiriBot) || ( meBot < hitPantaiKiriTop)) || ((meLeft-movement > hitPantaiKiriRight) || (meRight < hitPantaiKiriLeft))) && //collision check with pantai Kiri hitbox
+                        ((( meTop > hitPantaiKananBot) || ( meBot < hitPantaiKananTop)) || ((meLeft-movement > hitPantaiKananRight) || (meRight < hitPantaiKananLeft))) //collision check with pantai Kanan hitbox
                     ){ 
                         $('.sprite-left').css("opacity", 1);
                         $('.sprite-right').css("opacity", 0);
                         $('.sprite-up').css("opacity", 0);
                         $('.sprite-down').css("opacity", 0);
                         $('.me').stop().animate({
-                            left: '-=20'
+                            left: '-=' + movement
                         }, 100, 'linear'); 
                     }
                     break;
                 case 38: //up arrow key
                     if((Math.abs($(".me").position().top)<$(".image-map").height()) && //Checks wether .me is in top most screen
-                        ((( meTop-20 > hitBlueBot) || ( meBot < hitBlueTop)) || ((meLeft > hitBlueRight) || (meRight < hitBlueLeft))) && //collision check with blue hitbox
-                        ((( meTop-20 > hitGreenBot) || ( meBot < hitGreenTop)) || ((meLeft > hitGreenRight) || (meRight < hitGreenLeft))) && //collision check with green hitbox
-                        ((( meTop-20 > hitRedBot) || ( meBot < hitRedTop)) || ((meLeft > hitRedRight) || (meRight < hitRedLeft))) && //collision check with ref hitbox
-                        ((( meTop-20 > hitOrangeBot) || ( meBot < hitOrangeTop)) || ((meLeft > hitOrangeRight) || (meRight < hitOrangeLeft))) &&//collision check with orange hitbox
-                        ((( meTop-20 > hitPurpleBot) || ( meBot < hitPurpleTop)) || ((meLeft > hitPurpleRight) || (meRight < hitPurpleLeft))) && //collision check with purple hitbox
-                        ((( meTop-20 > hitHouseBot) || ( meBot < hitHouseTop)) || ((meLeft > hitHouseRight) || (meRight < hitHouseLeft))) && //collision check with house hitbox
-                        ((( meTop-20 > hitPantaiKiriBot) || ( meBot < hitPantaiKiriTop)) || ((meLeft > hitPantaiKiriRight) || (meRight < hitPantaiKiriLeft))) && //collision check with pantai kiri hitbox
-                        ((( meTop-20 > hitPantaiKananBot) || ( meBot < hitPantaiKananTop)) || ((meLeft > hitPantaiKananRight) || (meRight < hitPantaiKananLeft))) //collision check with pantai kanan hitbox
+                        ((( meTop-movement > hitBlueBot) || ( meBot < hitBlueTop)) || ((meLeft > hitBlueRight) || (meRight < hitBlueLeft))) && //collision check with blue hitbox
+                        ((( meTop-movement > hitGreenBot) || ( meBot < hitGreenTop)) || ((meLeft > hitGreenRight) || (meRight < hitGreenLeft))) && //collision check with green hitbox
+                        ((( meTop-movement > hitRedBot) || ( meBot < hitRedTop)) || ((meLeft > hitRedRight) || (meRight < hitRedLeft))) && //collision check with ref hitbox
+                        ((( meTop-movement > hitOrangeBot) || ( meBot < hitOrangeTop)) || ((meLeft > hitOrangeRight) || (meRight < hitOrangeLeft))) &&//collision check with orange hitbox
+                        ((( meTop-movement > hitPurpleBot) || ( meBot < hitPurpleTop)) || ((meLeft > hitPurpleRight) || (meRight < hitPurpleLeft))) && //collision check with purple hitbox
+                        ((( meTop-movement > hitHouseBot) || ( meBot < hitHouseTop)) || ((meLeft > hitHouseRight) || (meRight < hitHouseLeft))) && //collision check with house hitbox
+                        ((( meTop-movement > hitPantaiKiriBot) || ( meBot < hitPantaiKiriTop)) || ((meLeft > hitPantaiKiriRight) || (meRight < hitPantaiKiriLeft))) && //collision check with pantai kiri hitbox
+                        ((( meTop-movement > hitPantaiKananBot) || ( meBot < hitPantaiKananTop)) || ((meLeft > hitPantaiKananRight) || (meRight < hitPantaiKananLeft))) //collision check with pantai kanan hitbox
                     ){
                         $('.sprite-left').css("opacity", 0);
                         $('.sprite-right').css("opacity", 0);
                         $('.sprite-up').css("opacity", 1);
                         $('.sprite-down').css("opacity", 0);
                         $('.me').stop().animate({
-                            top: '-=20'
+                            top: '-=' + movement
                         }, 100, 'linear'); 
                     }
                     break;
                 case 39://right arrow key
                     if(meRight < $(".image-map").width() && //Checks wether .me is in right most screen
-                        ((( meTop > hitBlueBot) || ( meBot < hitBlueTop)) || ((meLeft > hitBlueRight) || (meRight+20 < hitBlueLeft))) && //collision check with blue hitbox
-                        ((( meTop > hitGreenBot) || ( meBot < hitGreenTop)) || ((meLeft > hitGreenRight) || (meRight+20 < hitGreenLeft))) && //collision check with green hitbox
-                        ((( meTop > hitRedBot) || ( meBot < hitRedTop)) || ((meLeft > hitRedRight) || (meRight+20 < hitRedLeft))) && //collision check with red hitbox
-                        ((( meTop > hitOrangeBot) || ( meBot < hitOrangeTop)) || ((meLeft > hitOrangeRight) || (meRight+20 < hitOrangeLeft))) && //collision check with orange hitbox
-                        ((( meTop > hitPurpleBot) || ( meBot < hitPurpleTop)) || ((meLeft > hitPurpleRight) || (meRight+20 < hitPurpleLeft))) && //collision check with purple hitbox
-                        ((( meTop > hitHouseBot) || ( meBot < hitHouseTop)) || ((meLeft > hitHouseRight) || (meRight+20 < hitHouseLeft))) && //collision check with house hitbox
-                        ((( meTop > hitPantaiKiriBot) || ( meBot < hitPantaiKiriTop)) || ((meLeft > hitPantaiKiriRight) || (meRight+20 < hitPantaiKiriLeft))) && //collision check with pantai kiri hitbox
-                        ((( meTop > hitPantaiKananBot) || ( meBot < hitPantaiKananTop)) || ((meLeft > hitPantaiKananRight) || (meRight+20 < hitPantaiKananLeft))) //collision check with pantai kanan hitbox
+                        ((( meTop > hitBlueBot) || ( meBot < hitBlueTop)) || ((meLeft > hitBlueRight) || (meRight+movement < hitBlueLeft))) && //collision check with blue hitbox
+                        ((( meTop > hitGreenBot) || ( meBot < hitGreenTop)) || ((meLeft > hitGreenRight) || (meRight+movement < hitGreenLeft))) && //collision check with green hitbox
+                        ((( meTop > hitRedBot) || ( meBot < hitRedTop)) || ((meLeft > hitRedRight) || (meRight+movement < hitRedLeft))) && //collision check with red hitbox
+                        ((( meTop > hitOrangeBot) || ( meBot < hitOrangeTop)) || ((meLeft > hitOrangeRight) || (meRight+movement < hitOrangeLeft))) && //collision check with orange hitbox
+                        ((( meTop > hitPurpleBot) || ( meBot < hitPurpleTop)) || ((meLeft > hitPurpleRight) || (meRight+movement < hitPurpleLeft))) && //collision check with purple hitbox
+                        ((( meTop > hitHouseBot) || ( meBot < hitHouseTop)) || ((meLeft > hitHouseRight) || (meRight+movement < hitHouseLeft))) && //collision check with house hitbox
+                        ((( meTop > hitPantaiKiriBot) || ( meBot < hitPantaiKiriTop)) || ((meLeft > hitPantaiKiriRight) || (meRight+movement < hitPantaiKiriLeft))) && //collision check with pantai kiri hitbox
+                        ((( meTop > hitPantaiKananBot) || ( meBot < hitPantaiKananTop)) || ((meLeft > hitPantaiKananRight) || (meRight+movement < hitPantaiKananLeft))) //collision check with pantai kanan hitbox
                     ){
                         $('.sprite-left').css("opacity", 0);
                         $('.sprite-right').css("opacity", 1);
                         $('.sprite-up').css("opacity", 0);
                         $('.sprite-down').css("opacity", 0);
                         $('.me').stop().animate({
-                            left: '+=20'
+                            left: '+=' + movement
                         }, 100, 'linear'); 
                     }
                     break;
                 case 40:  //bottom arrow key
                     if((($(".me").position().top+$('.me').height()+40)<0) && //Checks wether .me is in bottom most screen
-                        ((( meTop > hitBlueBot) || ( meBot+20 < hitBlueTop)) || ((meLeft > hitBlueRight) || (meRight < hitBlueLeft))) && //collision check with blue hitbox
-                        ((( meTop > hitGreenBot) || ( meBot+20 < hitGreenTop)) || ((meLeft > hitGreenRight) || (meRight < hitGreenLeft))) && //collision check with green hitbox
-                        ((( meTop > hitRedBot) || ( meBot+20 < hitRedTop)) || ((meLeft > hitRedRight) || (meRight < hitRedLeft))) && //collision check with red hitbox
-                        ((( meTop > hitOrangeBot) || ( meBot+20 < hitOrangeTop)) || ((meLeft > hitOrangeRight) || (meRight < hitOrangeLeft))) && //collision check with orange hitbox
-                        ((( meTop > hitPurpleBot) || ( meBot+20 < hitPurpleTop)) || ((meLeft > hitPurpleRight) || (meRight < hitPurpleLeft))) &&//collision check with purple hitbox
-                        ((( meTop > hitHouseBot) || ( meBot+20 < hitHouseTop)) || ((meLeft > hitHouseRight) || (meRight < hitHouseLeft))) && //collision check with house hitbox
-                        ((( meTop > hitPantaiKiriBot) || ( meBot+20 < hitPantaiKiriTop)) || ((meLeft > hitPantaiKiriRight) || (meRight < hitPantaiKiriLeft))) && //collision check with pantai kiri hitbox
-                        ((( meTop > hitPantaiKananBot) || ( meBot+20 < hitPantaiKananTop)) || ((meLeft > hitPantaiKananRight) || (meRight < hitPantaiKananLeft))) //collision check with pantai kanan hitbox
+                        ((( meTop > hitBlueBot) || ( meBot+movement < hitBlueTop)) || ((meLeft > hitBlueRight) || (meRight < hitBlueLeft))) && //collision check with blue hitbox
+                        ((( meTop > hitGreenBot) || ( meBot+movement < hitGreenTop)) || ((meLeft > hitGreenRight) || (meRight < hitGreenLeft))) && //collision check with green hitbox
+                        ((( meTop > hitRedBot) || ( meBot+movement < hitRedTop)) || ((meLeft > hitRedRight) || (meRight < hitRedLeft))) && //collision check with red hitbox
+                        ((( meTop > hitOrangeBot) || ( meBot+movement < hitOrangeTop)) || ((meLeft > hitOrangeRight) || (meRight < hitOrangeLeft))) && //collision check with orange hitbox
+                        ((( meTop > hitPurpleBot) || ( meBot+movement < hitPurpleTop)) || ((meLeft > hitPurpleRight) || (meRight < hitPurpleLeft))) &&//collision check with purple hitbox
+                        ((( meTop > hitHouseBot) || ( meBot+movement < hitHouseTop)) || ((meLeft > hitHouseRight) || (meRight < hitHouseLeft))) && //collision check with house hitbox
+                        ((( meTop > hitPantaiKiriBot) || ( meBot+movement < hitPantaiKiriTop)) || ((meLeft > hitPantaiKiriRight) || (meRight < hitPantaiKiriLeft))) && //collision check with pantai kiri hitbox
+                        ((( meTop > hitPantaiKananBot) || ( meBot+movement < hitPantaiKananTop)) || ((meLeft > hitPantaiKananRight) || (meRight < hitPantaiKananLeft))) //collision check with pantai kanan hitbox
                     ){ 
                         $('.sprite-left').css("opacity", 0);
                         $('.sprite-right').css("opacity", 0);
                         $('.sprite-up').css("opacity", 0);
                         $('.sprite-down').css("opacity", 1);
                         $('.me').stop().animate({
-                            top: '+=20'
+                            top: '+=' + movement
                         }, 100, 'linear');
                     }
                     break;

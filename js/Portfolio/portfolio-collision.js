@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    const movement = $(window).width()/40;
         
     var isOpen1 = 0;
     var isOpen2 = 0;
@@ -33,7 +34,7 @@ $(document).ready(function () {
         var hitPort4Right = $(".hitbox-portfolio-4").position().left + $(".hitbox-portfolio-4").width();
 
         //collision check with Door hitbox
-        if(!((( meTop-20 > hitDoorBot) || ( meBot < hitDoorTop)) || ((meLeft-20 > hitDoorRight) || (meRight+20 < hitDoorLeft)))){
+        if(!((( meTop-movement > hitDoorBot) || ( meBot < hitDoorTop)) || ((meLeft-movement > hitDoorRight) || (meRight+movement < hitDoorLeft)))){
             if(!isOpenBack){
                 $(".door-msg").css("animation", "fadein .5s");
                 $(".door-msg").css("display", "block");
@@ -49,7 +50,7 @@ $(document).ready(function () {
         }
 
         //collision check with Port1 hitbox
-        if(!((( meTop+20 > hitPort1Bot) || ( meBot+20 < hitPort1Top)) || ((meLeft+20 > hitPort1Right) || (meRight-20 < hitPort1Left)))){
+        if(!((( meTop+movement > hitPort1Bot) || ( meBot+movement < hitPort1Top)) || ((meLeft+movement > hitPort1Right) || (meRight-movement < hitPort1Left)))){
             if(!isOpen1){
                 $("#portfolio-msg-1").css("animation", "fadein .5s");
                 $("#portfolio-msg-1").css("display", "block");
@@ -61,7 +62,7 @@ $(document).ready(function () {
         }
 
         //collision check with Port2 hitbox
-        if(!((( meTop+20 > hitPort2Bot) || ( meBot+20 < hitPort2Top)) || ((meLeft+20 > hitPort2Right) || (meRight-20 < hitPort2Left)))){
+        if(!((( meTop+movement > hitPort2Bot) || ( meBot+movement < hitPort2Top)) || ((meLeft+movement > hitPort2Right) || (meRight-movement < hitPort2Left)))){
             if(!isOpen2){
                 $("#portfolio-msg-2").css("animation", "fadein .5s");
                 $("#portfolio-msg-2").css("display", "block");
@@ -73,7 +74,7 @@ $(document).ready(function () {
         }
 
         //collision check with Port3 hitbox
-        if(!((( meTop+20 > hitPort3Bot) || ( meBot+20 < hitPort3Top)) || ((meLeft+20 > hitPort3Right) || (meRight-20 < hitPort3Left)))){
+        if(!((( meTop+movement > hitPort3Bot) || ( meBot+movement < hitPort3Top)) || ((meLeft+movement > hitPort3Right) || (meRight-movement < hitPort3Left)))){
             if(!isOpen3){
                 $("#portfolio-msg-3").css("animation", "fadein .5s");
                 $("#portfolio-msg-3").css("display", "block");
@@ -85,7 +86,7 @@ $(document).ready(function () {
         }
 
         //collision check with Port4 hitbox
-        if(!((( meTop+20 > hitPort4Bot) || ( meBot+20 < hitPort4Top)) || ((meLeft+20 > hitPort4Right) || (meRight-20 < hitPort4Left)))){
+        if(!((( meTop+movement > hitPort4Bot) || ( meBot+movement < hitPort4Top)) || ((meLeft+movement > hitPort4Right) || (meRight-movement < hitPort4Left)))){
             if(!isOpen4){
                 $("#portfolio-msg-4").css("animation", "fadein .5s");
                 $("#portfolio-msg-4").css("display", "block");
@@ -177,7 +178,7 @@ $(document).ready(function () {
         var hitDoorLeft = $(".hitbox-door").position().left;
         var hitDoorRight = $(".hitbox-door").position().left + $(".hitbox-door").width();
 
-        if(!((( meTop-20 > hitDoorBot) || ( meBot < hitDoorTop)) || ((meLeft-20 > hitDoorRight) || (meRight+20 < hitDoorLeft)))){
+        if(!((( meTop-movement > hitDoorBot) || ( meBot < hitDoorTop)) || ((meLeft-movement > hitDoorRight) || (meRight+movement < hitDoorLeft)))){
             if(e.which == 32){
                 window.location.replace("home.html");
             }

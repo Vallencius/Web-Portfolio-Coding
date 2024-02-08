@@ -1,4 +1,6 @@
 $(document).ready(function () { 
+    const movement = $(window).width()/40;
+
     $(document).on('keyup',function (e){   
         // Hitboxes
         var meBot = (($(".me").position().top) + $(".me").height()+ $(".image-map").height());
@@ -35,7 +37,7 @@ $(document).ready(function () {
         var hitMenuRight = $(".hitbox-pantai-menu").position().left + $(".hitbox-pantai-menu").width();
     
         //collision check with blue hitbox
-        if(!((( meTop-20 > hitBlueBot) || ( meBot+20 < hitBlueTop)) || ((meLeft-20 > hitBlueRight) || (meRight+20 < hitBlueLeft)))){
+        if(!((( meTop-movement > hitBlueBot) || ( meBot+movement < hitBlueTop)) || ((meLeft-movement > hitBlueRight) || (meRight+movement < hitBlueLeft)))){
             $(".blue-msg").css("display", "block");
             if(e.which == 32){
                 $(".modal-detail").css("display", "block");
@@ -48,7 +50,7 @@ $(document).ready(function () {
         }
         
         //collision check with green hitbox
-        if(!((( meTop-20 > hitGreenBot) || ( meBot+20 < hitGreenTop)) || ((meLeft-20 > hitGreenRight) || (meRight+20 < hitGreenLeft)))){
+        if(!((( meTop-movement > hitGreenBot) || ( meBot+movement < hitGreenTop)) || ((meLeft-movement > hitGreenRight) || (meRight+movement < hitGreenLeft)))){
             $(".green-msg").css("display", "block");
             if(e.which == 32){
                 $(".modal-detail").css("display", "block");
@@ -61,7 +63,7 @@ $(document).ready(function () {
         }
 
         //collision check with Red hitbox
-        if(!((( meTop-20 > hitRedBot) || ( meBot+20 < hitRedTop)) || ((meLeft-20 > hitRedRight) || (meRight+20 < hitRedLeft)))){
+        if(!((( meTop-movement > hitRedBot) || ( meBot+movement < hitRedTop)) || ((meLeft-movement > hitRedRight) || (meRight+movement < hitRedLeft)))){
             $(".red-msg").css("display", "block");
             if(e.which == 32){
                 $(".modal-detail").css("display", "block");
@@ -74,7 +76,7 @@ $(document).ready(function () {
         }
 
         //collision check with Orange hitbox
-        if(!((( meTop-20 > hitOrangeBot) || ( meBot+20 < hitOrangeTop)) || ((meLeft-20 > hitOrangeRight) || (meRight+20 < hitOrangeLeft)))){
+        if(!((( meTop-movement > hitOrangeBot) || ( meBot+movement < hitOrangeTop)) || ((meLeft-movement > hitOrangeRight) || (meRight+movement < hitOrangeLeft)))){
             $(".orange-msg").css("display", "block");
             if(e.which == 32){
                 $(".modal-detail").css("display", "block");
@@ -87,7 +89,7 @@ $(document).ready(function () {
         }
 
         //collision check with Purple hitbox
-        if(!((( meTop-20 > hitPurpleBot) || ( meBot+20 < hitPurpleTop)) || ((meLeft-20 > hitPurpleRight) || (meRight+20 < hitPurpleLeft)))){
+        if(!((( meTop-movement > hitPurpleBot) || ( meBot+movement < hitPurpleTop)) || ((meLeft-movement > hitPurpleRight) || (meRight+movement < hitPurpleLeft)))){
             $(".purple-msg").css("display", "block");
             if(e.which == 32){
                 $(".modal-detail").css("display", "block");
@@ -100,7 +102,7 @@ $(document).ready(function () {
         }
         
         //collision check with House hitbox
-        if(!((( meTop-20 > hitHouseBot) || ( meBot+20 < hitHouseTop)) || ((meLeft-20 > hitHouseRight) || (meRight+20 < hitHouseLeft)))){
+        if(!((( meTop-movement > hitHouseBot) || ( meBot+movement < hitHouseTop)) || ((meLeft-movement > hitHouseRight) || (meRight+movement < hitHouseLeft)))){
             $(".house-msg").css("display", "block");
             if(e.which == 32){
                 window.location.replace("portfolio.html");

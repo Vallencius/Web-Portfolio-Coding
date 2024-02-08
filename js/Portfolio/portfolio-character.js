@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    const movement = $(window).width()/40;
+
     $(document).on('keydown',function (e){   
         if (!$('.me').is(':animated'))  {   
             // Hitboxes
@@ -30,66 +32,66 @@ $(document).ready(function () {
             switch(e.which){
                 case 37: //left arrow key
                     if(meLeft > 40 && //Checks wether .me is in left most screen
-                        ((( meTop > hitKiriBot) || ( meBot < hitKiriTop)) || ((meLeft-20 > hitKiriRight) || (meRight < hitKiriLeft))) && //collision check with kiri hitbox
-                        ((( meTop > hitKananBot) || ( meBot < hitKananTop)) || ((meLeft-20 > hitKananRight) || (meRight < hitKananLeft))) && //collision check with Kanan hitbox
-                        ((( meTop > hitFireBot) || ( meBot < hitFireTop)) || ((meLeft-20 > hitFireRight) || (meRight < hitFireLeft))) && //collision check with Fire hitbox
-                        ((( meTop > hitBawahBot) || ( meBot < hitBawahTop)) || ((meLeft-20 > hitBawahRight) || (meRight < hitBawahLeft))) //collision check with Bawah hitbox
+                        ((( meTop > hitKiriBot) || ( meBot < hitKiriTop)) || ((meLeft-movement > hitKiriRight) || (meRight < hitKiriLeft))) && //collision check with kiri hitbox
+                        ((( meTop > hitKananBot) || ( meBot < hitKananTop)) || ((meLeft-movement > hitKananRight) || (meRight < hitKananLeft))) && //collision check with Kanan hitbox
+                        ((( meTop > hitFireBot) || ( meBot < hitFireTop)) || ((meLeft-movement > hitFireRight) || (meRight < hitFireLeft))) && //collision check with Fire hitbox
+                        ((( meTop > hitBawahBot) || ( meBot < hitBawahTop)) || ((meLeft-movement > hitBawahRight) || (meRight < hitBawahLeft))) //collision check with Bawah hitbox
                     ){ 
                         $('.sprite-left').css("opacity", 1);
                         $('.sprite-right').css("opacity", 0);
                         $('.sprite-up').css("opacity", 0);
                         $('.sprite-down').css("opacity", 0);
                         $('.me').stop().animate({
-                            left: '-=20'
+                            left: '-=' + movement
                         }, 100, 'linear'); 
                     }
                     break;
                 case 38: //up arrow key
                     if((Math.abs($(".me").position().top)<$(".image-map").height()) && //Checks wether .me is in top most screen
                         ((( meBot-40 > hitAtasBot)) || ((meLeft > hitAtasRight) || (meRight < hitAtasLeft))) && //collision check with Atas hitbox
-                        ((( meTop-20 > hitKiriBot) || ( meBot < hitKiriTop)) || ((meLeft > hitKiriRight) || (meRight < hitKiriLeft))) && //collision check with Kiri hitbox
-                        ((( meTop-20 > hitKananBot) || ( meBot < hitKananTop)) || ((meLeft > hitKananRight) || (meRight < hitKananLeft))) && //collision check with Kanan hitbox
-                        ((( meTop-20 > hitFireBot) || ( meBot < hitFireTop)) || ((meLeft > hitFireRight) || (meRight < hitFireLeft))) && //collision check with Fire hitbox
-                        ((( meTop-20 > hitBawahBot) || ( meBot < hitBawahTop)) || ((meLeft > hitBawahRight) || (meRight < hitBawahLeft))) //collision check with Bawah hitbox
+                        ((( meTop-movement > hitKiriBot) || ( meBot < hitKiriTop)) || ((meLeft > hitKiriRight) || (meRight < hitKiriLeft))) && //collision check with Kiri hitbox
+                        ((( meTop-movement > hitKananBot) || ( meBot < hitKananTop)) || ((meLeft > hitKananRight) || (meRight < hitKananLeft))) && //collision check with Kanan hitbox
+                        ((( meTop-movement > hitFireBot) || ( meBot < hitFireTop)) || ((meLeft > hitFireRight) || (meRight < hitFireLeft))) && //collision check with Fire hitbox
+                        ((( meTop-movement > hitBawahBot) || ( meBot < hitBawahTop)) || ((meLeft > hitBawahRight) || (meRight < hitBawahLeft))) //collision check with Bawah hitbox
                     ){
                         $('.sprite-left').css("opacity", 0);
                         $('.sprite-right').css("opacity", 0);
                         $('.sprite-up').css("opacity", 1);
                         $('.sprite-down').css("opacity", 0);
                         $('.me').stop().animate({
-                            top: '-=20'
+                            top: '-=' + movement
                         }, 100, 'linear'); 
                     }
                     break;
                 case 39://right arrow key
                     if(meRight+40 < $(".image-map").width() && //Checks wether .me is in right most screen
-                        ((( meTop > hitKiriBot) || ( meBot < hitKiriTop)) || ((meLeft > hitKiriRight) || (meRight+20 < hitKiriLeft))) && //collision check with Kiri hitbox
-                        ((( meTop > hitKananBot) || ( meBot < hitKananTop)) || ((meLeft > hitKananRight) || (meRight+20 < hitKananLeft))) && //collision check with Kanan hitbox
-                        ((( meTop > hitFireBot) || ( meBot < hitFireTop)) || ((meLeft > hitFireRight) || (meRight+20 < hitFireLeft))) && //collision check with Fire hitbox
-                        ((( meTop > hitBawahBot) || ( meBot < hitBawahTop)) || ((meLeft > hitBawahRight) || (meRight+20 < hitBawahLeft))) //collision check with Bawah hitbox
+                        ((( meTop > hitKiriBot) || ( meBot < hitKiriTop)) || ((meLeft > hitKiriRight) || (meRight+movement < hitKiriLeft))) && //collision check with Kiri hitbox
+                        ((( meTop > hitKananBot) || ( meBot < hitKananTop)) || ((meLeft > hitKananRight) || (meRight+movement < hitKananLeft))) && //collision check with Kanan hitbox
+                        ((( meTop > hitFireBot) || ( meBot < hitFireTop)) || ((meLeft > hitFireRight) || (meRight+movement < hitFireLeft))) && //collision check with Fire hitbox
+                        ((( meTop > hitBawahBot) || ( meBot < hitBawahTop)) || ((meLeft > hitBawahRight) || (meRight+movement < hitBawahLeft))) //collision check with Bawah hitbox
                     ){
                         $('.sprite-left').css("opacity", 0);
                         $('.sprite-right').css("opacity", 1);
                         $('.sprite-up').css("opacity", 0);
                         $('.sprite-down').css("opacity", 0);
                         $('.me').stop().animate({
-                            left: '+=20'
+                            left: '+=' + movement
                         }, 100, 'linear'); 
                     }
                     break;
                 case 40:  //bottom arrow key
                     if((($(".me").position().top+$('.me').height())<0) && //Checks wether .me is in bottom most screen
-                        ((( meTop > hitKiriBot) || ( meBot+20 < hitKiriTop)) || ((meLeft > hitKiriRight) || (meRight < hitKiriLeft))) && //collision check with Kiri hitbox
-                        ((( meTop > hitKananBot) || ( meBot+20 < hitKananTop)) || ((meLeft > hitKananRight) || (meRight < hitKananLeft))) && //collision check with Kanan hitbox
-                        ((( meTop > hitFireBot) || ( meBot+20 < hitFireTop)) || ((meLeft > hitFireRight) || (meRight < hitFireLeft))) && //collision check with Fire hitbox
-                        ((( meTop > hitBawahBot) || ( meBot+20 < hitBawahTop)) || ((meLeft > hitBawahRight) || (meRight < hitBawahLeft))) //collision check with Bawah hitbox
+                        ((( meTop > hitKiriBot) || ( meBot+movement < hitKiriTop)) || ((meLeft > hitKiriRight) || (meRight < hitKiriLeft))) && //collision check with Kiri hitbox
+                        ((( meTop > hitKananBot) || ( meBot+movement < hitKananTop)) || ((meLeft > hitKananRight) || (meRight < hitKananLeft))) && //collision check with Kanan hitbox
+                        ((( meTop > hitFireBot) || ( meBot+movement < hitFireTop)) || ((meLeft > hitFireRight) || (meRight < hitFireLeft))) && //collision check with Fire hitbox
+                        ((( meTop > hitBawahBot) || ( meBot+movement < hitBawahTop)) || ((meLeft > hitBawahRight) || (meRight < hitBawahLeft))) //collision check with Bawah hitbox
                     ){ 
                         $('.sprite-left').css("opacity", 0);
                         $('.sprite-right').css("opacity", 0);
                         $('.sprite-up').css("opacity", 0);
                         $('.sprite-down').css("opacity", 1);
                         $('.me').stop().animate({
-                            top: '+=20'
+                            top: '+=' + movement
                         }, 100, 'linear');
                     }
                     break;

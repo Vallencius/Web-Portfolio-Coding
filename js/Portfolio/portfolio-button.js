@@ -4,6 +4,8 @@ $(document).ready(function () {
     var isOpen2 = 0;
     var isOpen3 = 0;
     var isOpen4 = 0;
+    const movement = $(window).width()/40;
+
     $(document).on('touchstart',function (){   
         if (!$('.me').is(':animated'))  {   
             // Hitboxes
@@ -62,17 +64,17 @@ $(document).ready(function () {
                     hitBawahRight = $(".hitbox-bawah").position().left + $(".hitbox-bawah").width();
 
                     if(meLeft > 40 && //Checks wether .me is in left most screen
-                        ((( meTop > hitKiriBot) || ( meBot < hitKiriTop)) || ((meLeft-20 > hitKiriRight) || (meRight < hitKiriLeft))) && //collision check with kiri hitbox
-                        ((( meTop > hitKananBot) || ( meBot < hitKananTop)) || ((meLeft-20 > hitKananRight) || (meRight < hitKananLeft))) && //collision check with Kanan hitbox
-                        ((( meTop > hitFireBot) || ( meBot < hitFireTop)) || ((meLeft-20 > hitFireRight) || (meRight < hitFireLeft))) && //collision check with Fire hitbox
-                        ((( meTop > hitBawahBot) || ( meBot < hitBawahTop)) || ((meLeft-20 > hitBawahRight) || (meRight < hitBawahLeft))) //collision check with Bawah hitbox
+                        ((( meTop > hitKiriBot) || ( meBot < hitKiriTop)) || ((meLeft-movement > hitKiriRight) || (meRight < hitKiriLeft))) && //collision check with kiri hitbox
+                        ((( meTop > hitKananBot) || ( meBot < hitKananTop)) || ((meLeft-movement > hitKananRight) || (meRight < hitKananLeft))) && //collision check with Kanan hitbox
+                        ((( meTop > hitFireBot) || ( meBot < hitFireTop)) || ((meLeft-movement > hitFireRight) || (meRight < hitFireLeft))) && //collision check with Fire hitbox
+                        ((( meTop > hitBawahBot) || ( meBot < hitBawahTop)) || ((meLeft-movement > hitBawahRight) || (meRight < hitBawahLeft))) //collision check with Bawah hitbox
                     ){ 
                         $('.sprite-left').css("opacity", 1);
                         $('.sprite-right').css("opacity", 0);
                         $('.sprite-up').css("opacity", 0);
                         $('.sprite-down').css("opacity", 0);
                         $('.me').stop().animate({
-                            left: '-=20'
+                            left: '-=' + movement
                         }, 100, 'linear'); 
                     }
                 }
@@ -108,17 +110,17 @@ $(document).ready(function () {
 
                     if((Math.abs($(".me").position().top)<$(".image-map").height()) && //Checks wether .me is in top most screen
                         ((( meBot-21 > hitAtasBot)) || ((meLeft > hitAtasRight) || (meRight < hitAtasLeft))) && //collision check with Atas hitbox
-                        ((( meTop-20 > hitKiriBot) || ( meBot < hitKiriTop)) || ((meLeft > hitKiriRight) || (meRight < hitKiriLeft))) && //collision check with Kiri hitbox
-                        ((( meTop-20 > hitKananBot) || ( meBot < hitKananTop)) || ((meLeft > hitKananRight) || (meRight < hitKananLeft))) && //collision check with Kanan hitbox
-                        ((( meTop-20 > hitFireBot) || ( meBot < hitFireTop)) || ((meLeft > hitFireRight) || (meRight < hitFireLeft))) && //collision check with Fire hitbox
-                        ((( meTop-20 > hitBawahBot) || ( meBot < hitBawahTop)) || ((meLeft > hitBawahRight) || (meRight < hitBawahLeft))) //collision check with Bawah hitbox
+                        ((( meTop-movement > hitKiriBot) || ( meBot < hitKiriTop)) || ((meLeft > hitKiriRight) || (meRight < hitKiriLeft))) && //collision check with Kiri hitbox
+                        ((( meTop-movement > hitKananBot) || ( meBot < hitKananTop)) || ((meLeft > hitKananRight) || (meRight < hitKananLeft))) && //collision check with Kanan hitbox
+                        ((( meTop-movement > hitFireBot) || ( meBot < hitFireTop)) || ((meLeft > hitFireRight) || (meRight < hitFireLeft))) && //collision check with Fire hitbox
+                        ((( meTop-movement > hitBawahBot) || ( meBot < hitBawahTop)) || ((meLeft > hitBawahRight) || (meRight < hitBawahLeft))) //collision check with Bawah hitbox
                     ){
                         $('.sprite-left').css("opacity", 0);
                         $('.sprite-right').css("opacity", 0);
                         $('.sprite-up').css("opacity", 1);
                         $('.sprite-down').css("opacity", 0);
                         $('.me').stop().animate({
-                            top: '-=20'
+                            top: '-=' + movement
                         }, 100, 'linear'); 
                     }
                 }
@@ -153,17 +155,17 @@ $(document).ready(function () {
                     hitBawahRight = $(".hitbox-bawah").position().left + $(".hitbox-bawah").width();
 
                     if(meRight+40 < $(".image-map").width() && //Checks wether .me is in right most screen
-                        ((( meTop > hitKiriBot) || ( meBot < hitKiriTop)) || ((meLeft > hitKiriRight) || (meRight+20 < hitKiriLeft))) && //collision check with Kiri hitbox
-                        ((( meTop > hitKananBot) || ( meBot < hitKananTop)) || ((meLeft > hitKananRight) || (meRight+20 < hitKananLeft))) && //collision check with Kanan hitbox
-                        ((( meTop > hitFireBot) || ( meBot < hitFireTop)) || ((meLeft > hitFireRight) || (meRight+20 < hitFireLeft))) && //collision check with Fire hitbox
-                        ((( meTop > hitBawahBot) || ( meBot < hitBawahTop)) || ((meLeft > hitBawahRight) || (meRight+20 < hitBawahLeft))) //collision check with Bawah hitbox
+                        ((( meTop > hitKiriBot) || ( meBot < hitKiriTop)) || ((meLeft > hitKiriRight) || (meRight+movement < hitKiriLeft))) && //collision check with Kiri hitbox
+                        ((( meTop > hitKananBot) || ( meBot < hitKananTop)) || ((meLeft > hitKananRight) || (meRight+movement < hitKananLeft))) && //collision check with Kanan hitbox
+                        ((( meTop > hitFireBot) || ( meBot < hitFireTop)) || ((meLeft > hitFireRight) || (meRight+movement < hitFireLeft))) && //collision check with Fire hitbox
+                        ((( meTop > hitBawahBot) || ( meBot < hitBawahTop)) || ((meLeft > hitBawahRight) || (meRight+movement < hitBawahLeft))) //collision check with Bawah hitbox
                     ){
                         $('.sprite-left').css("opacity", 0);
                         $('.sprite-right').css("opacity", 1);
                         $('.sprite-up').css("opacity", 0);
                         $('.sprite-down').css("opacity", 0);
                         $('.me').stop().animate({
-                            left: '+=20'
+                            left: '+=' + movement
                         }, 100, 'linear'); 
                     }
                 }
@@ -198,17 +200,17 @@ $(document).ready(function () {
                     hitBawahRight = $(".hitbox-bawah").position().left + $(".hitbox-bawah").width();
 
                     if((($(".me").position().top+$('.me').height()+0)<0) && //Checks wether .me is in bottom most screen
-                        ((( meTop > hitKiriBot) || ( meBot+20 < hitKiriTop)) || ((meLeft > hitKiriRight) || (meRight < hitKiriLeft))) && //collision check with Kiri hitbox
-                        ((( meTop > hitKananBot) || ( meBot+20 < hitKananTop)) || ((meLeft > hitKananRight) || (meRight < hitKananLeft))) && //collision check with Kanan hitbox
-                        ((( meTop > hitFireBot) || ( meBot+20 < hitFireTop)) || ((meLeft > hitFireRight) || (meRight < hitFireLeft))) && //collision check with Fire hitbox
-                        ((( meTop > hitBawahBot) || ( meBot+20 < hitBawahTop)) || ((meLeft > hitBawahRight) || (meRight < hitBawahLeft))) //collision check with Bawah hitbox
+                        ((( meTop > hitKiriBot) || ( meBot+movement < hitKiriTop)) || ((meLeft > hitKiriRight) || (meRight < hitKiriLeft))) && //collision check with Kiri hitbox
+                        ((( meTop > hitKananBot) || ( meBot+movement < hitKananTop)) || ((meLeft > hitKananRight) || (meRight < hitKananLeft))) && //collision check with Kanan hitbox
+                        ((( meTop > hitFireBot) || ( meBot+movement < hitFireTop)) || ((meLeft > hitFireRight) || (meRight < hitFireLeft))) && //collision check with Fire hitbox
+                        ((( meTop > hitBawahBot) || ( meBot+movement < hitBawahTop)) || ((meLeft > hitBawahRight) || (meRight < hitBawahLeft))) //collision check with Bawah hitbox
                     ){ 
                         $('.sprite-left').css("opacity", 0);
                         $('.sprite-right').css("opacity", 0);
                         $('.sprite-up').css("opacity", 0);
                         $('.sprite-down').css("opacity", 1);
                         $('.me').stop().animate({
-                            top: '+=20'
+                            top: '+=' + movement
                         }, 100, 'linear');
                     }
                 }
@@ -243,11 +245,11 @@ $(document).ready(function () {
         var hitPort4Right = $(".hitbox-portfolio-4").position().left + $(".hitbox-portfolio-4").width();
 
         //collision check with Door hitbox
-        if(!((( meTop-20 > hitDoorBot) || ( meBot < hitDoorTop)) || ((meLeft-20 > hitDoorRight) || (meRight+20 < hitDoorLeft)))){
+        if(!((( meTop-movement > hitDoorBot) || ( meBot < hitDoorTop)) || ((meLeft-movement > hitDoorRight) || (meRight+movement < hitDoorLeft)))){
             $(".door-msg").css("display", "block");
             $(".image-map").addClass("dark");
             $(".act-button").on("click", function(){
-                if(!((( meTop-20 > hitDoorBot) || ( meBot < hitDoorTop)) || ((meLeft-20 > hitDoorRight) || (meRight+20 < hitDoorLeft)))){
+                if(!((( meTop-movement > hitDoorBot) || ( meBot < hitDoorTop)) || ((meLeft-movement > hitDoorRight) || (meRight+movement < hitDoorLeft)))){
                     window.location.replace("home.html");
                 }
             });
@@ -256,7 +258,7 @@ $(document).ready(function () {
         }
 
         //collision check with Port1 hitbox
-        if(!((( meTop+21 > hitPort1Bot) || ( meBot+20 < hitPort1Top)) || ((meLeft+20 > hitPort1Right) || (meRight-20 < hitPort1Left)))){
+        if(!((( meTop+21 > hitPort1Bot) || ( meBot+movement < hitPort1Top)) || ((meLeft+movement > hitPort1Right) || (meRight-movement < hitPort1Left)))){
             if(!isOpen1){
                 $("#portfolio-msg-1").css("display", "block");
                 $(".image-map").addClass("dark");
@@ -267,7 +269,7 @@ $(document).ready(function () {
         }
 
         //collision check with Port2 hitbox
-        if(!((( meTop+21 > hitPort2Bot) || ( meBot+20 < hitPort2Top)) || ((meLeft+20 > hitPort2Right) || (meRight-20 < hitPort2Left)))){
+        if(!((( meTop+21 > hitPort2Bot) || ( meBot+movement < hitPort2Top)) || ((meLeft+movement > hitPort2Right) || (meRight-movement < hitPort2Left)))){
             if(!isOpen2){
                 $("#portfolio-msg-2").css("display", "block");
                 $(".image-map").addClass("dark");
@@ -278,7 +280,7 @@ $(document).ready(function () {
         }
 
         //collision check with Port3 hitbox
-        if(!((( meTop+21 > hitPort3Bot) || ( meBot+20 < hitPort3Top)) || ((meLeft+20 > hitPort3Right) || (meRight-20 < hitPort3Left)))){
+        if(!((( meTop+21 > hitPort3Bot) || ( meBot+movement < hitPort3Top)) || ((meLeft+movement > hitPort3Right) || (meRight-movement < hitPort3Left)))){
             if(!isOpen3){
                 $("#portfolio-msg-3").css("display", "block");
                 $(".image-map").addClass("dark");
@@ -289,7 +291,7 @@ $(document).ready(function () {
         }
 
         //collision check with Port4 hitbox
-        if(!((( meTop+21 > hitPort4Bot) || ( meBot+20 < hitPort4Top)) || ((meLeft+20 > hitPort4Right) || (meRight-20 < hitPort4Left)))){
+        if(!((( meTop+21 > hitPort4Bot) || ( meBot+movement < hitPort4Top)) || ((meLeft+movement > hitPort4Right) || (meRight-movement < hitPort4Left)))){
             if(!isOpen4){
                 $("#portfolio-msg-4").css("display", "block");
                 $(".image-map").addClass("dark");
