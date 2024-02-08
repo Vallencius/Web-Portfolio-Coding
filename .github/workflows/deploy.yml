@@ -1,4 +1,4 @@
-name: Deploy to FTP Server
+name: Deploy to SSH Server
 
 on:
   push:
@@ -7,15 +7,16 @@ on:
       
 jobs:
   web-deploy:
-    name: Deploy
+    name: 🚀 Deploy Website Every Commit
     runs-on: ubuntu-latest
     steps:
-    - name: Get latest code
+    - name: 🚚 Get Latest Code
       uses: actions/checkout@v3
-
-    - name: Push files
-      uses: SamKirkland/FTP-Deploy-Action@v4.0.0
+    
+    - name: 📂 Sync Files
+      uses: SamKirkland/web-deploy@v1
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
+        target-server: ${{ secrets.FTP_SERVER }}
+        remote-user: ${{ secrets.FTP_USERNAME }}
+        private-ssh-key: ${{ secrets.SSH_KEY }}
+        destination-path: ~/game_portfolio/
