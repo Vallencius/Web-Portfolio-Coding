@@ -3,8 +3,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100dvw;
-    height: 100dvh;
+    width: 100lvw;
+    height: 100lvh;
     background-color: #2961b5;
     z-index:9;
 }

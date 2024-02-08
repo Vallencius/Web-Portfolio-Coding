@@ -10,23 +10,21 @@ body{
     -webkit-filter: blur(8px);
 }
 .main-display{
-    width: 100dvw;
-    height: 100dvh;
+    width: 100lvw;
+    height: 100lvh;
     margin: 0 auto;
     text-align: center;
-    background-color: #000;
+    background-image: url("../../images/House-inside.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
 }
 .image-map{
     position:relative;
     height: 100vmin;
     width: 177.778vmin;
     margin: 0 auto;
-}
-.map{
-    position: absolute;
-    top:0;
-    left: 0;
-    height: 100vmin;
 }
 .sprite-box{
     position: absolute;
@@ -37,7 +35,7 @@ body{
 }
 .sprite{
     position: absolute;
-    bottom: 25dvh;
+    bottom: 25lvh;
     left: 330%;
     z-index: 1;
     width: 100%;
@@ -53,8 +51,8 @@ body{
 }
 .door-msg{
     display: none;
-    height: 40dvh;
-    width: 30dvw;
+    height: 40lvh;
+    width: 30lvw;
     position: absolute;
     top:50%;
     left:50%;
@@ -85,7 +83,7 @@ body{
 }
 .portfolio-msg{
     display: none;
-    height: 80dvh;
+    height: 80lvh;
     width: 60vw;
     position: absolute;
     top:50%;
@@ -168,8 +166,8 @@ body{
 
 
 .modal-awal{
-    height: 80dvh;
-    width: 60dvw;
+    height: 80lvh;
+    width: 60lvw;
     position: absolute;
     top:50%;
     left:50%;

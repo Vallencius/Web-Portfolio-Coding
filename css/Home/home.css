@@ -10,8 +10,8 @@ body{
     -webkit-filter: blur(8px);
 }
 .home-display{
-    width: 100dvw;
-    height: 100dvh;
+    width: 100lvw;
+    height: 100lvh;
     margin: 0 auto;
     text-align: center;
     background-image: url("../../images/grass.gif");
@@ -38,7 +38,7 @@ body{
 }
 .sprite{
     position: absolute;
-    bottom: 70dvh;
+    bottom: 70lvh;
     left: 10px;
     z-index: 1;
     width: 100%;

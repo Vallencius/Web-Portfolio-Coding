@@ -66,8 +66,8 @@
     top:0;
     left:50%;
     transform: translate(-50%,-100%);
-    width: 60dvw;
-    height: 100dvh;
+    width: 60lvw;
+    height: 100lvh;
     background-image: url(../../images/Modal.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -119,8 +119,8 @@
 }
 
 .modal-awal{
-    height: 80dvh;
-    width: 60dvw;
+    height: 80lvh;
+    width: 60lvw;
     position: absolute;
     top:50%;
     left:50%;
