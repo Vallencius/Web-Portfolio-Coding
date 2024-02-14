@@ -6,4 +6,12 @@ $(document).ready(function(){
             $(".portrait-mode").css("display", "none");
         }
     }, 500);
+
+        // New event listener:
+    window.addEventListener("load",function() {
+        setTimeout(function(){
+            // Hide the address bar:
+            window.scrollTo(0, 1);
+        }, 0);
+    });
 });
