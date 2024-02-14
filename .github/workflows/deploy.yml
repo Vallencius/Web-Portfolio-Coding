@@ -18,4 +18,4 @@ jobs:
         username: deploy@game.vallencius.my.id
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
-        timeout: 9999999999
+        timeout: 9999999
