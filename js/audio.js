@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var audioElement = document.createElement('audio');
     audioElement.setAttribute('src', '../audio/main.mp3');
+    audioElement.setAttribute('loop', true);
 
     $('.mute').click(function() {
         audioElement.play();

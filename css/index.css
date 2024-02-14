@@ -7,13 +7,13 @@ body{
     filter: brightness(50%);
 }
 .main-display{
-    width: 100lvw;
-    height: 100lvh;
+    width: 100svw;
+    height: 100svh;
     margin: 0 auto;
     text-align: center;
 }
 .main-menu{
-    width: 100lvw;
+    width: 100svw;
     position: relative;
     top: 50%;
     left: 50%;
@@ -88,8 +88,8 @@ body{
     top: 0%;
     left: 50%;
     transform: translate(-50%, -112.5%);
-    width: 60lvw;
-    height: 80lvh;
+    width: 60svw;
+    height: 80svh;
     background-image: url(../images/Modal.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
