@@ -1,6 +1,10 @@
 body{
     overflow: hidden;
     margin: 0 !important;
+    height: 100%;
+    position: fixed;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 .dark{
     filter: brightness(50%);
